@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/auth', function () {
+    return view('admin-dash.admin.index');
+});
 Route::middleware('auth')->group(function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });

@@ -59,8 +59,6 @@
                 </div>
             </div>
 
-
-
         </div>
         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
