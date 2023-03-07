@@ -35,10 +35,11 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{-- {{ config('app.name', 'Laravel') }} --}}
-                        Musicians' bazaar
-                    </a>
+                    <div class="flex items-center">
+                        <a href="#">
+                            <img src="{{asset('img/logo/lblogo.png')}}" height="45px"  class="ml-0" alt="">
+                        </a>
+                    </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -85,6 +86,35 @@
                 </div>
             </nav>
             
+            
+            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navbar-hover">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHover"
+                        aria-controls="navbarDD" aria-expanded="false" aria-label="Navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarHover">
+                        <ul class="container navbar-nav">
+                            @for ($i = 0; $i < 5; $i++)
+                                
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href=""
+                                    data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Category(test)
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="">Subcategory(ttttttttt)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            @endfor
+                        </ul>
+                    </div>
+            </nav>
+
             {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">Navbar</a>
@@ -109,5 +139,47 @@
                 @yield('content')
             </main>
         </div>
+        <style>
+            /* .navbar li a {
+            color: white !important;
+        } */
+        
+            .dropdown:hover>.dropdown-menu {
+                display: block;
+            }
+        
+            /* hover dropdown menus */
+            @media only screen and (max-width: 991px) {
+                .navbar-hover .show>.dropdown-toggle::after {
+                    transform: rotate(-90deg);
+                }
+            }
+        
+            @media only screen and (min-width: 492px) {
+        
+                .navbar-hover .collapse ul li {
+                    position: relative;
+                }
+        
+                .navbar-hover .collapse ul li:hover>ul {
+                    display: block
+                }
+        
+                .navbar-hover .collapse ul ul {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    min-width: 250px;
+                    display: none
+                }
+        
+                .navbar-hover .collapse ul ul ul {
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    min-width: 250px;
+                    display: none
+                }
+        </style>
     </body>
     </html>

@@ -8,8 +8,9 @@
                     <div class="text-center mt-2">
                         <h4>Login</h4>
                         @if(session('status'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-success alert-dismissible fade show mx-auto w-75" role="alert">
                             {{session('status')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         @endif
                     </div>
@@ -68,10 +69,6 @@
                                 </div>
                             </div>
                             
-                            
-                           
-
-
                         </form>
                     </div>
                 </div>
