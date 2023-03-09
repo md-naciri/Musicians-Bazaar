@@ -94,23 +94,24 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarHover">
-                        <ul class="container navbar-nav">
-                            @for ($i = 0; $i < 5; $i++)
-                                
+                        <ul class="navbar-nav mx-auto">
+                            @foreach ($navs as $nav)                                
                             
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown mx-2">
                                 <a class="nav-link dropdown-toggle" href=""
                                     data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
                                     aria-expanded="false">
-                                    Category(test)
+                                    {{$nav->name}}
                                 </a>
                                 <ul class="dropdown-menu">
+                                    @foreach ($nav->subcategories as $subcategory)
                                     <li>
-                                        <a class="dropdown-item" href="">Subcategory(ttttttttt)</a>
+                                        <a class="dropdown-item" href="">{{$subcategory->name}}</a>
                                     </li>
+                                    @endforeach
                                 </ul>
                             </li>
-                            @endfor
+                            @endforeach
                         </ul>
                     </div>
             </nav>

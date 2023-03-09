@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Navigation;
 use App\Http\Controllers\SubcategoryController;
 
 /*
@@ -16,9 +17,9 @@ use App\Http\Controllers\SubcategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 Route::get('/home', function () {
     return view('home');
 });
@@ -30,3 +31,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::resource('/category', CategoryController::class);
 Route::resource('/subcategory', SubcategoryController::class);
 });
+
+Route::get('/',[Navigation::class, 'navigation']);

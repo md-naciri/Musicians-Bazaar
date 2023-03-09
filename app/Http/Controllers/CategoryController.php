@@ -73,6 +73,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         return view('admin-dash.category.edit', ['category'=>$category]);
+
     }
 
     /**
