@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSubcategoryRequest;
+use App\Http\Requests\UpdateSubcategoryRequest;
 use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        $subcategories = Subcategory::All();
+        $subcategories = Subcategory::orderBy('category_id')->get();
         return view('admin-dash.category.subcategory.index',['subcategories'=>$subcategories]);
     }
 
@@ -42,7 +43,7 @@ class SubcategoryController extends Controller
         $input = $request->all();
         $input['slug']=Str::slug($input['name']);
         Subcategory::create($input);
-        return redirect()->route('subcategory.index')->with('message','Subategory created successfully');
+        return redirect()->route('subcategory.index')->with('message','Subcategory created successfully');
     }
 
     /**
@@ -64,7 +65,8 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $subcategory = Subcategory::find($id);
+        return view('admin-dash.category.subcategory.edit', ['subcategory'=>$subcategory]);
     }
 
     /**
@@ -74,9 +76,13 @@ class SubcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateSubcategoryRequest $request, $id)
     {
-        //
+        $subcategory = Subcategory::findOrFail($id);
+        $input = $request->all();
+        $input['slug']=Str::slug($input['name']);
+        $subcategory->update($input);
+        return redirect()->route('subcategory.index')->with('message','Subcategory updated successfully');
     }
 
     /**
@@ -87,6 +93,7 @@ class SubcategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Subcategory::destroy($id);
+        return redirect()->route('subcategory.index')->with('message','Subcategory deleted successfully');
     }
 }

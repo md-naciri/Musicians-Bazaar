@@ -112,6 +112,6 @@ class CategoryController extends Controller
         $category = Category::find($id);
         unlink(public_path('img/category/' . $category->image));
         Category::destroy($id);
-        return redirect()->route('category.index')->with('message','Category deleted successfully');;
+        return redirect()->route('category.index')->with('message','Category deleted successfully');
     }
 }

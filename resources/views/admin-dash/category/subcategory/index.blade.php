@@ -26,7 +26,7 @@
                                                 @if($category = App\Models\Category::find($subcategory->category_id)) {{ $category->name }}
                                                 @endif
                                             </td>
-                                            <td><a href="{{route('subcategory.edit', $category->id)}}"><button class="btn btn-info"><i class="mdi mdi-table-edit"></i></button></a></td>
+                                            <td><a href="{{route('subcategory.edit', $subcategory->id)}}"><button class="btn btn-info"><i class="mdi mdi-table-edit"></i></button></a></td>
                                             
                                                 <td>
 
