@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
@@ -23,9 +24,7 @@ Route::get('/home', function () {
 Route::get('/admin', function () {
     return view('admin-dash.admin.index');
 });
-Route::get('/admin/category', function () {
-    return view('admin-dash.category.create');
-});
-Route::middleware('auth')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::resource('/category', CategoryController::class);
 });
