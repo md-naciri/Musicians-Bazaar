@@ -21,6 +21,21 @@
             </ul>
           </div>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#subc" aria-expanded="false" aria-controls="subc">
+            <i class="mdi mdi-circle-outline menu-icon"></i>
+            <span class="menu-title">Subcategory</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="subc">
+            <ul class="nav flex-column sub-menu">
+              <li class=""> <a class="nav-link" href="{{route('subcategory.create')}}">Add a subcategory</a></li>
+              <li class=""> <a class="nav-link" href="{{route('subcategory.index')}}">Manage subcategories</a></li>
+            </ul>
+          </div>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="pages/forms/basic_elements.html">
             <i class="mdi mdi-view-headline menu-icon"></i>
