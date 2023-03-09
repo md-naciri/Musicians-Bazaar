@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
@@ -16,7 +17,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        dd('test');
+        // $categories = Category::paginate(5);
+        $categories = Category::All();
+        return view('admin-dash.category.index',['categories'=>$categories]);
     }
 
     /**
@@ -40,13 +43,13 @@ class CategoryController extends Controller
         $input = $request->all();
         if ($image = $request->file('image')) {
             $destinationPath = 'img/category';
-            $categoryImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $categoryImage = Str::uuid() . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $categoryImage);
             $input['image'] = "$categoryImage";
         }
-        $input['slug']=Str::slug($request->name);
+        $input['slug']=Str::slug($input['name']);
         Category::create($input);
-        return redirect()->back(); 
+        return redirect()->route('category.index')->with('message','Category created successfully');
     }
 
     /**
@@ -68,7 +71,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin-dash.category.edit', ['category'=>$category]);
     }
 
     /**
@@ -80,7 +84,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $input = $request->all();
+        $input['slug']=Str::slug($input['name']);
+        if ($request->hasFile('image')) {
+            unlink(public_path('img/category/' . $category->image));
+            // Storage::delete($category->image);
+            $image = $request->file('image');
+            $destinationPath = 'img/category';
+            $categoryImage = Str::uuid() . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $categoryImage);
+            $input['image'] = "$categoryImage";
+            $category->update($input);
+        }
+        $category->update(['name'=>$request->name, 'slug'=>$input['slug']]);
+        return redirect()->route('category.index')->with('message','Category updated successfully');
     }
 
     /**
@@ -91,6 +109,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        unlink(public_path('img/category/' . $category->image));
+        Category::destroy($id);
+        return redirect()->route('category.index')->with('message','Category deleted successfully');;
     }
 }
