@@ -36,4 +36,5 @@ Route::resource('/subcategory', SubcategoryController::class);
 Route::get('/',[Navigation::class, 'navigation']);
 
 Route::get('/ad/create',[InstrumentController::class, 'create']);
+Route::post('/ad/store',[InstrumentController::class, 'store'])->middleware('auth')->name('ad.store');
 

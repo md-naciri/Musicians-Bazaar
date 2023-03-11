@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('title');
+            $table->string('slug');
             $table->string('image1');
             $table->string('image2');
             $table->string('image3');
@@ -29,7 +30,7 @@ return new class extends Migration
             $table->integer('country_id');
             $table->integer('state_id')->nullable();
             $table->integer('city_id')->nullable();
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->integer('article_status')->default(1);
             $table->timestamps();
         });
