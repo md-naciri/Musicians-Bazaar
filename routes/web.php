@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InstrumentController;
 use App\Http\Controllers\Navigation;
 use App\Http\Controllers\SubcategoryController;
 
@@ -33,3 +34,6 @@ Route::resource('/subcategory', SubcategoryController::class);
 });
 
 Route::get('/',[Navigation::class, 'navigation']);
+
+Route::get('/ad/create',[InstrumentController::class, 'create']);
+
