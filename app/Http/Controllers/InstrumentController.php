@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreInstAdRequest;
 use App\Models\Instrument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -35,7 +36,7 @@ class InstrumentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreInstAdRequest $request)
     {
         $data = $request->all();
 
@@ -47,18 +48,20 @@ class InstrumentController extends Controller
         $image1->move($destinationPath, $image1name);
         $data['image1'] = "$image1name";
 
-        $image2 = $request->file('image2');
-        $destinationPath = 'img/inst_ads';
-        $image2name = Str::uuid() . "." . $image2->getClientOriginalExtension();
-        $image2->move($destinationPath, $image2name);
-        $data['image2'] = "$image2name";
+        if($image2 = $request->file('image2')){
+            $destinationPath = 'img/inst_ads';
+            $image2name = Str::uuid() . "." . $image2->getClientOriginalExtension();
+            $image2->move($destinationPath, $image2name);
+            $data['image2'] = "$image2name";
+        };
 
-        $image3 = $request->file('image3');
-        $destinationPath = 'img/inst_ads';
-        $image3name = Str::uuid() . "." . $image3->getClientOriginalExtension();
-        $image3->move($destinationPath, $image3name);
-        $data['image3'] = "$image3name";
-        
+        if($image3 = $request->file('image3')){
+            $destinationPath = 'img/inst_ads';
+            $image3name = Str::uuid() . "." . $image3->getClientOriginalExtension();
+            $image3->move($destinationPath, $image3name);
+            $data['image3'] = "$image3name";
+        };
+
         $data['slug']=Str::slug($data['title']);
 
         Instrument::create($data);

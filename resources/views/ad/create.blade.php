@@ -25,6 +25,16 @@
                 </div>
             </div>
             <div class="col-md-9">
+
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show mx-auto w-75" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        @foreach ($errors->all() as $error)
+                            <li>{{$error}}. </li>
+                        @endforeach
+                    </div>
+                @endif
+
                 <form action="{{route('ad.store')}}" method="post" enctype="multipart/form-data">@csrf
                     <div class="card">
                         <div class="card-header text-white" style="background-color: red">

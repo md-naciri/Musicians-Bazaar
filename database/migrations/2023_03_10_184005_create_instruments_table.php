@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('image1');
-            $table->string('image2');
-            $table->string('image3');
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
             $table->integer('category_id');
             $table->integer('subcategory_id')->nullable();
             $table->text('text');
