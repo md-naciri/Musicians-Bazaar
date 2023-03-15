@@ -18,7 +18,8 @@
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+        @vite('resources/js/app.js')
 
         <!-- Styles -->
         <style>
@@ -36,9 +37,11 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <div class="flex items-center">
+                 
                         <a href="#">
-                            <img src="{{asset('img/logo/lblogo.png')}}" height="45px"  class="ml-0" alt="">
+                            <img style="height: 45px" src="{{asset('img/logo/lblogo.png')}}" class="ml-0" alt="">
                         </a>
+                        
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>

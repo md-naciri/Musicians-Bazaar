@@ -13,6 +13,9 @@
                     Hello, {{auth()->user()->name}}
                 </div>
             </div>
+            <div>
+                <testing></testing>
+            </div>
         </div>
     </div>
 </div>
