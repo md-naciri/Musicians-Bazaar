@@ -17,7 +17,8 @@ class InstrumentController extends Controller
      */
     public function index()
     {
-        
+        $myInstruments = Instrument::where('user_id', auth()->user()->id)->get();
+        return view('ad.index',['myInstruments'=>$myInstruments]);
     }
 
     /**

@@ -6,8 +6,7 @@
         <h2> Hna chi title </h2>
         <div class="row ">
             <div class="col-md-3">
-                <div class="card ">
-
+                {{-- <div class="card ">
                     <div class="card-body ">
                         <img class="mx-auto d-block img-thumbnail" src="/img/man.jpg" width="130">
                         <p class="text-center"><b>Med NACIRI</b></p>
@@ -21,8 +20,8 @@
                         <a href="#">Pending ads</a>
                         <a href="#" class="">Message</a>
                     </div>
-
-                </div>
+                </div> --}}
+                @include('sidebar')
             </div>
             <div class="col-md-9">
 
