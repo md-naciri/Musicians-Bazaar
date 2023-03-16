@@ -44,13 +44,13 @@
                             <label for="file" class="mt-2"><b>Please upload at least one image for your instrument or accessory</b></label>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <input type="file" class="form-control" name="image1" accept="image/*">
+                                    <show-image1></show-image1>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="file" class="form-control" name="image2" accept="image/*">
+                                    <show-image2></show-image2>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="file" class="form-control" name="image3" accept="image/*">
+                                    <show-image3></show-image3>
                                 </div>
                             </div>
 

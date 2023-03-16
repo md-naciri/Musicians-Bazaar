@@ -23,7 +23,7 @@ use App\Http\Controllers\SubcategoryController;
 // });
 Route::get('/home', function () {
     return view('home');
-});
+})->middleware('auth');
 Route::get('/admin', function () {
     return view('admin-dash.admin.index');
 });
