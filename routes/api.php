@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ApiCategoryHandler;
+use App\Http\Controllers\Api\ApiLocationHandler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/category',[ApiCategoryHandler::class, 'getCategory']);
 Route::get('/subcategory',[ApiCategoryHandler::class, 'getSubcategory']);
+
+Route::get('/country',[ApiLocationHandler::class, 'getCountry']);
+Route::get('/state',[ApiLocationHandler::class, 'getState']);
+Route::get('/city',[ApiLocationHandler::class, 'getCity']);

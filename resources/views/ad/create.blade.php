@@ -55,29 +55,26 @@
                             </div>
 
                             <label for="file" class="mt-3"><b>Select a category and subcategory</b></label>
-                            <div class="row">
-
-                                {{-- <div class="col-md-6">
+                            {{-- <div class="row">
+                                <div class="col-md-6">
                                     <select class="form-control" name="category_id">
                                         <option value="">Select a category</option>
                                         @foreach (App\Models\Category::all() as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
                                     </select>
-                                </div> --}}
-                                {{-- <div class="col-md-6">
+                                </div>
+                                <div class="col-md-6">
                                     <select class="form-control" name="subcategory_id">
                                         <option value="">Select a subcategory</option>
                                         @foreach (App\Models\Subcategory::all() as $subcategory)
                                         <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
                                         @endforeach
                                     </select>
-                                </div> --}}
+                                </div>
+                            </div> --}}
+                            <select-category></select-category>
 
-                                <select-category></select-category>
-
-
-                            </div>
 
                             <div class="mt-3">
                                 <label for="title"><b>Title</b> (Include instrument/accessory name in ad title)</label>
@@ -107,7 +104,7 @@
                                 <input type="text" class="form-control" name="adress">
                             </div>
                             <label for="file" class="mt-3"><b>Select Country, State, and City</b></label>
-                            <div class="row mt-2">
+                            {{-- <div class="row mt-2">
                                 <div class="col-md-4">
                                     <select class="form-control" name="country_id">
                                         <option value="">Select country</option>
@@ -132,8 +129,9 @@
                                         @endforeach
                                     </select>
                                 </div>
+                            </div> --}}
+                            <select-location></select-location>
 
-                            </div>
                             <div class=" mt-3">
                                 <label for="phone"><b>Contact phone</b></label>
                                 <input type="tel" class="form-control" name="phone">
@@ -149,20 +147,5 @@
         </div>
     </div>
 
-    <style>
-        .vertical-menu a {
-            background-color: #fff;
-            color: #000;
-            display: block;
-            padding: 12px;
-            text-decoration: none;
-        }
-
-        .vertical-menu a:hover {
-            background-color: red;
-            color: #fff;
-        }
-
-    </style>
 
 @endsection

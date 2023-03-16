@@ -147,7 +147,19 @@
             /* .navbar li a {
             color: white !important;
         } */
-        
+            .vertical-menu a {
+                background-color: #fff;
+                color: #000;
+                display: block;
+                padding: 12px;
+                text-decoration: none;
+            }
+
+            .vertical-menu a:hover {
+                background-color: red;
+                color: #fff;
+            }
+
             .dropdown:hover>.dropdown-menu {
                 display: block;
             }
