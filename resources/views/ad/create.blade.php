@@ -56,22 +56,26 @@
 
                             <label for="file" class="mt-3"><b>Select a category and subcategory</b></label>
                             <div class="row">
-                                <div class="col-md-6">
+
+                                {{-- <div class="col-md-6">
                                     <select class="form-control" name="category_id">
                                         <option value="">Select a category</option>
                                         @foreach (App\Models\Category::all() as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
                                     </select>
-                                </div>
-                                <div class="col-md-6">
+                                </div> --}}
+                                {{-- <div class="col-md-6">
                                     <select class="form-control" name="subcategory_id">
                                         <option value="">Select a subcategory</option>
                                         @foreach (App\Models\Subcategory::all() as $subcategory)
                                         <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
+
+                                <select-category></select-category>
+
 
                             </div>
 

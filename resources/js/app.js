@@ -1,12 +1,12 @@
 import './bootstrap';
 import { createApp } from 'vue/dist/vue.esm-bundler.js';
 const app = createApp({});
-import Test from './components/Test.vue';
 import First from './components/form-img/First.vue';
 import Second from './components/form-img/Second.vue';
 import Third from './components/form-img/Third.vue';
-app.component('testing', Test);
+import SelectCategory from './components/SelectCategory.vue';
 app.component('show-image1', First);
 app.component('show-image2', Second);
 app.component('show-image3', Third);
+app.component('select-category', SelectCategory);
 app.mount('#app');
