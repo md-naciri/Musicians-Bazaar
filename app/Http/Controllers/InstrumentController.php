@@ -67,8 +67,7 @@ class InstrumentController extends Controller
 
         Instrument::create($data);
 
-        // return redirect()->route('category.index')->with('message','Category created successfully');
-        return 'created successfully';
+        return redirect()->route('getMyAds')->with('message','Ad created successfully');
     }
 
     /**
@@ -88,9 +87,10 @@ class InstrumentController extends Controller
      * @param  \App\Models\Instrument  $instrument
      * @return \Illuminate\Http\Response
      */
-    public function edit(Instrument $instrument)
+    public function edit($id)
     {
-        //
+        $inst = Instrument::find($id);
+        return view('ad.edit', ['inst'=>$inst]);
     }
 
     /**
@@ -100,9 +100,41 @@ class InstrumentController extends Controller
      * @param  \App\Models\Instrument  $instrument
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Instrument $instrument)
+    public function update(Request $request, $id)
     {
-        //
+        $inst = Instrument::findOrFail($id);
+        $data = $request->all();
+        $data['slug']=Str::slug($data['title']);
+        if ($request->hasFile('image1')) {
+            unlink(public_path('img/inst_ads/' . $inst->image1));
+            $image1 = $request->file('image1');
+            $destinationPath = 'img/inst_ads';
+            $image1name = Str::uuid() . "." . $image1->getClientOriginalExtension();
+            $image1->move($destinationPath, $image1name);
+            $data['image1'] = "$image1name";
+        }
+        if ($request->hasFile('image2')) {
+            if ($inst->image2) {
+                unlink(public_path('img/inst_ads/' . $inst->image2));
+            }
+            $image2 = $request->file('image2');
+            $destinationPath = 'img/inst_ads';
+            $image2name = Str::uuid() . "." . $image2->getClientOriginalExtension();
+            $image2->move($destinationPath, $image2name);
+            $data['image2'] = "$image2name";
+        }
+        if ($request->hasFile('image3')) {
+            if ($inst->image3) {
+                unlink(public_path('img/inst_ads/' . $inst->image3));
+            }
+            $image3 = $request->file('image3');
+            $destinationPath = 'img/inst_ads';
+            $image3name = Str::uuid() . "." . $image3->getClientOriginalExtension();
+            $image3->move($destinationPath, $image3name);
+            $data['image3'] = "$image3name";
+        }
+        $inst->update($data);
+        return redirect()->route('getMyAds')->with('message','Ad updated successfully');
     }
 
     /**

@@ -7,6 +7,7 @@
                 @include('sidebar')
             </div>
             <div class="col-md-9">
+                @include('admin-dash.include.message')
                 <table class="table table-bordered">
                     <thead>
                       <tr>
@@ -22,16 +23,25 @@
                         @foreach ($myInstruments as $key => $inst)
                         <tr>
                             <th scope="row">{{$key+1}}</th>
-                            <td><img src="/img/inst_ads/{{$inst->image1}}" style="width: 100px" alt=""></td>
+                            <td>
+                                <img src="/img/inst_ads/{{$inst->image1}}" style="width: 100px" alt="">
+                                {{-- @if ($inst->image2) --}}
+                                <img src="/img/inst_ads/{{$inst->image2}}" style="width: 100px" alt="">
+                                {{-- @endif --}}
+                                {{-- @if ($inst->image3) --}}
+                                <img src="/img/inst_ads/{{$inst->image3}}" style="width: 100px" alt="">
+                                {{-- @endif --}}
+                            </td>
                             <td>{{$inst->title}}</td>
                             <td>MAD {{$inst->price}}</td>
-                            <td><button class="btn btn-info">Edit</button></td>
+                            <td><a href="{{route('ad.edit', $inst->id)}}"><button class="btn btn-info">Edit</button></a></td>
                             <td><button class="btn btn-danger">View</button></td>
                         </tr>
                         @endforeach
                     </tbody>
-                  </table>
+                </table>
             </div>
+        </div>
     </div>
 
 @endsection

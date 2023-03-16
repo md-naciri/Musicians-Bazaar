@@ -35,6 +35,8 @@ Route::resource('/subcategory', SubcategoryController::class);
 
 Route::get('/',[Navigation::class, 'navigation']);
 
-Route::get('/ad/create',[InstrumentController::class, 'create'])->middleware('auth');
-Route::post('/ad/store',[InstrumentController::class, 'store'])->middleware('auth')->name('ad.store');
+Route::get('/myads/create',[InstrumentController::class, 'create'])->middleware('auth');
+Route::post('/myads/store',[InstrumentController::class, 'store'])->middleware('auth')->name('ad.store');
 Route::get('/myads',[InstrumentController::class, 'index'])->middleware('auth')->name('getMyAds');
+Route::get('/myads/edit/{id}',[InstrumentController::class, 'edit'])->middleware('auth')->name('ad.edit');
+Route::put('/myads/update/{id}',[InstrumentController::class, 'update'])->middleware('auth')->name('ad.update');
