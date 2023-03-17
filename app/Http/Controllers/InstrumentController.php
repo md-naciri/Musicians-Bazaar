@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInstAdRequest;
+use App\Http\Requests\UpdateInstAdRequest;
 use App\Models\Instrument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -100,7 +101,7 @@ class InstrumentController extends Controller
      * @param  \App\Models\Instrument  $instrument
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateInstAdRequest $request, $id)
     {
         $inst = Instrument::findOrFail($id);
         $data = $request->all();
