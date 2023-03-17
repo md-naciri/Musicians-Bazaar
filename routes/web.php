@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InstrumentController;
 use App\Http\Controllers\Navigation;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +36,11 @@ Route::resource('/subcategory', SubcategoryController::class);
 
 Route::get('/',[Navigation::class, 'navigation']);
 
-Route::get('/myads/create',[InstrumentController::class, 'create'])->middleware('auth');
+Route::get('/myads/create',[InstrumentController::class, 'create'])->middleware('auth')->name('ad.create');
 Route::post('/myads/store',[InstrumentController::class, 'store'])->middleware('auth')->name('ad.store');
 Route::get('/myads',[InstrumentController::class, 'index'])->middleware('auth')->name('getMyAds');
 Route::get('/myads/edit/{id}',[InstrumentController::class, 'edit'])->middleware('auth')->name('ad.edit');
 Route::put('/myads/update/{id}',[InstrumentController::class, 'update'])->middleware('auth')->name('ad.update');
 Route::delete('/myads/delete/{id}',[InstrumentController::class, 'destroy'])->middleware('auth')->name('ad.destroy');
+
+Route::get('/profile', [UserProfileController::class, 'index'])->middleware('auth');;

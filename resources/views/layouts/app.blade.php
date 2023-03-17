@@ -163,6 +163,11 @@
                 color: #fff;
             }
 
+            .vertical-menu a.active {
+                background-color: red;
+                color: #fff;
+            }
+
             .dropdown:hover>.dropdown-menu {
                 display: block;
             }

@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form action="{{route('password.update')}}" method="post">@csrf
                         <input type="hidden" name="token" value="{{request()->route("token")}}">
-                        <div class="form-group row mb-2">
+                        <div class="row mb-2">
                             <label for="email" class="col-md-4 col-form-label text-md-right">
                                 Email
                             </label>
@@ -24,7 +24,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row mb-2">
+                        <div class="row mb-2">
                             <label for="password" class="col-md-4 col-form-label text-md-right">
                                 Password
                             </label>
@@ -39,7 +39,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row mb-2">
+                        <div class="row mb-2">
                             <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">
                                 Confirm password
                             </label>
@@ -50,10 +50,9 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row mb-0">
+                        <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-danger">Create new password</button>
-                                
                             </div>
                         </div>
                     </form>

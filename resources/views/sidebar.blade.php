@@ -7,8 +7,8 @@
     <div class="vertical-menu">
         <a href="#">Dashboard</a>
         <a href="#">Profile</a>
-        <a href="#">Create ads</a>
-        <a href="#">Published ads</a>
+        <a href="{{route('ad.create')}}" class="{{request()->is('myads/create')?'active':''}}">Create ads</a>
+        <a href="{{route('getMyAds')}}" class="{{request()->is('myads')?'active':''}}">Published ads</a>
         <a href="#">Pending ads</a>
         <a href="#" class="">Message</a>
     </div>
