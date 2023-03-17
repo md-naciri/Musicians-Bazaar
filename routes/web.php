@@ -43,4 +43,5 @@ Route::get('/myads/edit/{id}',[InstrumentController::class, 'edit'])->middleware
 Route::put('/myads/update/{id}',[InstrumentController::class, 'update'])->middleware('auth')->name('ad.update');
 Route::delete('/myads/delete/{id}',[InstrumentController::class, 'destroy'])->middleware('auth')->name('ad.destroy');
 
-Route::get('/profile', [UserProfileController::class, 'index'])->middleware('auth');;
+Route::get('/profile', [UserProfileController::class, 'index'])->middleware('auth')->name('user.profile');
+Route::put('/profile', [UserProfileController::class, 'updateUser'])->middleware('auth')->name('update.user');
