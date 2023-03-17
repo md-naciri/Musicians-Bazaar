@@ -12,3 +12,4 @@ app.component('show-image3', Third);
 app.component('select-category', SelectCategory);
 app.component('select-location', SelectLocation);
 app.mount('#app');
+// app.mount('.my-app');

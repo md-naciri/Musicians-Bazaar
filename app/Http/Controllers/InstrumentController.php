@@ -91,6 +91,8 @@ class InstrumentController extends Controller
     public function edit($id)
     {
         $inst = Instrument::find($id);
+        // if(auth()->user()->id === $inst->user_id) // { do this, this is the first method, the second one is Gate }
+        $this->authorize('edit_instrument',$inst);
         return view('ad.edit', ['inst'=>$inst]);
     }
 
@@ -135,7 +137,7 @@ class InstrumentController extends Controller
             $data['image3'] = "$image3name";
         }
         $inst->update($data);
-        return redirect()->route('getMyAds')->with('message','Ad updated successfully');
+        return redirect()->route('getMyAds')->with('message','advertisement updated successfully');
     }
 
     /**
@@ -144,8 +146,17 @@ class InstrumentController extends Controller
      * @param  \App\Models\Instrument  $instrument
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Instrument $instrument)
+    public function destroy($id)
     {
-        //
+        $inst = Instrument::find($id);
+        unlink(public_path('img/inst_ads/' . $inst->image1));
+        if ($inst->image2) {
+            unlink(public_path('img/inst_ads/' . $inst->image2));
+        }
+        if ($inst->image3) {
+            unlink(public_path('img/inst_ads/' . $inst->image3));
+        }
+        Instrument::destroy($id);
+        return redirect()->route('getMyAds')->with('message','advertisement deleted successfully');
     }
 }

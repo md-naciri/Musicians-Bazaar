@@ -2,6 +2,7 @@
 @section('content')
 
 
+    {{-- <div class="container my-app"> --}}
     <div class="container">
         <h2> Hna chi title </h2>
         <div class="row ">

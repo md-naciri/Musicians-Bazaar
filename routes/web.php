@@ -40,3 +40,4 @@ Route::post('/myads/store',[InstrumentController::class, 'store'])->middleware('
 Route::get('/myads',[InstrumentController::class, 'index'])->middleware('auth')->name('getMyAds');
 Route::get('/myads/edit/{id}',[InstrumentController::class, 'edit'])->middleware('auth')->name('ad.edit');
 Route::put('/myads/update/{id}',[InstrumentController::class, 'update'])->middleware('auth')->name('ad.update');
+Route::delete('/myads/delete/{id}',[InstrumentController::class, 'destroy'])->middleware('auth')->name('ad.destroy');

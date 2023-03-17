@@ -34,6 +34,7 @@
     </head>
     <body>
         <div id="app">
+        {{-- <div id=""> --}}
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <div class="flex items-center">
@@ -145,8 +146,10 @@
         </div>
         <style>
             /* .navbar li a {
-            color: white !important;
-        } */
+                color: white !important;
+            } */
+
+
             .vertical-menu a {
                 background-color: #fff;
                 color: #000;
