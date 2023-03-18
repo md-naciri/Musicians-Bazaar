@@ -149,7 +149,7 @@
                                 @foreach ($nav->subcategories as $subcategory)
                                 <li>
                                     {{-- {{route('subcat', [$nav->slug, $subcategory->slug])}} --}}
-                                    <a class="dropdown-item" href="#">{{$subcategory->name}}</a>
+                                    <a class="dropdown-item" href="{{route('subcat', [$nav->slug, $subcategory->slug])}}">{{$subcategory->name}}</a>
                                 </li>
                                 @endforeach
                             </ul>
