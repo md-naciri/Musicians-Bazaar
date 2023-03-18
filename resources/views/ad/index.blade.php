@@ -68,8 +68,11 @@
                         <td><a href="{{route('ad.edit', $inst->id)}}"><button class="btn"
                                     style="background-color: var(--bs-info-text); color:aliceblue;">Edit</button></a>
                         </td>
-                        <td><button class="btn"
-                                style="background-color: var(--bs-warning-text); color:aliceblue;">View</button></td>
+                        <td>
+                            <a href="{{route('article.display',[$inst->id, $inst->slug])}}">
+                                <button class="btn" style="background-color: var(--bs-warning-text); color:aliceblue;">View</button>
+                            </a>
+                        </td>
                         <td><button class="btn" style="background-color: var(--bs-danger-text); color:aliceblue;"
                                 data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$inst->id}}">Delete</button>
                             <!-- Delete Modal -->
@@ -81,15 +84,18 @@
                                         @method('DELETE')
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete confirmation</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete
+                                                    confirmation</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">You will permanently delete this advertisement</div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn" style="background-color: var(--bs-danger-text); color:aliceblue;">Delete</button>
-                                                
+                                                <button type="submit" class="btn"
+                                                    style="background-color: var(--bs-danger-text); color:aliceblue;">Delete</button>
+
                                             </div>
                                         </div>
                                     </form>
