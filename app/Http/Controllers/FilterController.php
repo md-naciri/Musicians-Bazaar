@@ -35,10 +35,22 @@ class FilterController extends Controller
     }
 
 
-    public function articleBySubcat(Category $catSlag, Subcategory $subcatSlug)
+    public function articleBySubcat(Request $request, Category $catSlag, Subcategory $subcatSlug)
     {
+        $articlePrice = Instrument::where('subcategory_id', $subcatSlug->id)
+        ->when($request->minPrice, function($query, $minPrice){
+            return $query->whereRaw("CAST(price AS float) >= ?", [(float)$minPrice]);
+        })
+        ->when($request->maxPrice, function($query, $maxPrice){
+            return $query->whereRaw("CAST(price AS float) <= ?", [(float)$maxPrice]);
+        })
+        ->get();
+
         $articles = $subcatSlug->articles;
         $articleSubcat = $catSlag->articles->unique('subcategory_id');
+
+        $articles = $request->minPrice || $request->maxPrice ? $articlePrice : $articles;
+
         return view('article.subcategory', ['articles'=>$articles, 'articleSubcats'=>$articleSubcat]);
     }
 }
