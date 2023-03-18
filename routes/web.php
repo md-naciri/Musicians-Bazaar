@@ -48,4 +48,4 @@ Route::get('/profile', [UserProfileController::class, 'index'])->middleware('aut
 Route::put('/profile', [UserProfileController::class, 'updateUser'])->middleware('auth')->name('update.user');
 
 Route::get('/article/{catSlag}', [FilterController::class, 'articleByCat'])->name('cat');
-// Route::get('/article/{catSlag}/{subcatSlug}', [FilterController::class, 'articleBySubcat'])->name('subcat');
+Route::get('/article/{catSlag}/{subcatSlug}', [FilterController::class, 'articleBySubcat'])->name('subcat');

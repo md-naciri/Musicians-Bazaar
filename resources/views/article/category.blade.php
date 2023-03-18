@@ -7,11 +7,14 @@
                 <div class="card">
                     <div class="card-header text-white text-center" style="background-color: red;">Filter ::</div>
                     <div class="card-body">
-                        //loop
+                        @foreach ($articleSubcats as $articleSubcat) 
+                        
                         <p>
-                            name
+                            <a href="{{url()->current()}}/{{($articleSubcat->subcategory->slug)??''}}">
+                                {{$articleSubcat->subcategory->name}}
+                            </a>
                         </p>
-                        //endloop
+                        @endforeach
                         
 
                     </div>

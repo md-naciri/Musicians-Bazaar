@@ -11,12 +11,17 @@ class FilterController extends Controller
     public function articleByCat(Category $catSlag)
     {
         $articles = $catSlag->articles;
-        return view('article.category', ['articles'=>$articles]);
+        $articleSubcat = $catSlag->articles->unique('subcategory_id');
+        return view('article.category', ['articles'=>$articles, 'articleSubcats'=>$articleSubcat]);
     }
 
-    // public function articleBySubcat($catSlag,Subcategory $subcatSlug)
-    // {
-    //     $articles = $subcatSlug->articles;
-    //     return view('article.subcategory', ['articles'=>$articles]);
-    // }
+    public function articleBySubcat(Category $catSlag, Subcategory $subcatSlug)
+    {
+        $articles = $subcatSlug->articles;
+        $articleSubcat = $catSlag->articles->unique('subcategory_id');
+        return view('article.subcategory', ['articles'=>$articles, 'articleSubcats'=>$articleSubcat]);
+
+        // $articles = $subcatSlug->articles;
+        // return view('article.subcategory', ['articles'=>$articles]);
+    }
 }
