@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FilterController;
 use App\Http\Controllers\InstrumentController;
 use App\Http\Controllers\Navigation;
 use App\Http\Controllers\SubcategoryController;
@@ -45,3 +46,6 @@ Route::delete('/myads/delete/{id}',[InstrumentController::class, 'destroy'])->mi
 
 Route::get('/profile', [UserProfileController::class, 'index'])->middleware('auth')->name('user.profile');
 Route::put('/profile', [UserProfileController::class, 'updateUser'])->middleware('auth')->name('update.user');
+
+Route::get('/article/{catSlag}', [FilterController::class, 'articleByCat'])->name('cat');
+// Route::get('/article/{catSlag}/{subcatSlug}', [FilterController::class, 'articleBySubcat'])->name('subcat');

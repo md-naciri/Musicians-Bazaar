@@ -140,7 +140,7 @@
                         @foreach ($navs as $nav)
 
                         <li class="nav-item dropdown mx-2">
-                            <a class="nav-link dropdown-toggle" href=""
+                            <a class="nav-link dropdown-toggle" href="{{route('cat', $nav->slug)}}"
                                 data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
                                 aria-expanded="false">
                                 {{$nav->name}}
@@ -148,7 +148,8 @@
                             <ul class="dropdown-menu">
                                 @foreach ($nav->subcategories as $subcategory)
                                 <li>
-                                    <a class="dropdown-item" href="">{{$subcategory->name}}</a>
+                                    {{-- {{route('subcat', [$nav->slug, $subcategory->slug])}} --}}
+                                    <a class="dropdown-item" href="#">{{$subcategory->name}}</a>
                                 </li>
                                 @endforeach
                             </ul>
