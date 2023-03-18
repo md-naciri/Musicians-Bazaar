@@ -159,4 +159,10 @@ class InstrumentController extends Controller
         Instrument::destroy($id);
         return redirect()->route('getMyAds')->with('message','advertisement deleted successfully');
     }
+
+    public function articleDisplay($id, $slug){
+    // public function articleDisplay(){
+        $article = Instrument::where('id', $id)->where('slug', $slug)->firstOrFail();
+        return view('article.display',['article'=>$article]);
+    }
 }

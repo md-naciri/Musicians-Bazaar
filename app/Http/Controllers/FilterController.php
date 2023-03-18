@@ -53,4 +53,5 @@ class FilterController extends Controller
 
         return view('article.subcategory', ['articles'=>$articles, 'articleSubcats'=>$articleSubcat]);
     }
+
 }
