@@ -113,6 +113,11 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right me-5" aria-labelledby="navbarDropdown">
+                                    @if (Auth::check() && Auth::user()->role==1)
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                        {{ __('Dashboard') }}
+                                    </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('user.profile') }}">
                                         {{ __('My profile') }}
                                     </a>
