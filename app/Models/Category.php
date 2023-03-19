@@ -26,4 +26,8 @@ class Category extends Model
     public function articles(){
         return $this->hasMany(Instrument::class);
     }
+
+    public function scopeCategoryName($query, $name){
+        return $query->where('name', $name)->first();
+    }
 }
