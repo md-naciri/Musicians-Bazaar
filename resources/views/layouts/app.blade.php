@@ -113,6 +113,12 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right me-5" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('user.profile') }}">
+                                        {{ __('My profile') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('getMyAds') }}">
+                                        {{ __('My ads') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -140,7 +146,7 @@
                         @foreach ($navs as $nav)
 
                         <li class="nav-item dropdown mx-2">
-                            <a class="nav-link dropdown-toggle" href="{{route('cat', $nav->slug)}}"
+                            <a class="nav-link dropdown-toggle" href=""
                                 data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
                                 aria-expanded="false">
                                 {{$nav->name}}

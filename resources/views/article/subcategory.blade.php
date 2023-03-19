@@ -40,10 +40,13 @@
                     @foreach ($articles as $article)
                     
                         <div class="col-3">
-                            <img src="/img/inst_ads/{{$article->image1}}" class="img-thumbnail">
-                            <p class="text-center  card-footer">
-                                {{$article->title}}/${{$article->price}}
-                            </p>
+                            <a href="{{route('article.display',[$article->id, $article->slug])}}">
+                                <img src="/img/inst_ads/{{$article->image1}}" class="img-thumbnail">
+                                <p class="text-center  card-footer">
+                                    {{$article->title}}/${{$article->price}}
+                                </p>
+                            </a>
+                            
                         </div>
     
                     @endforeach

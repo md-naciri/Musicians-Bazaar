@@ -27,7 +27,7 @@
 <div class="container mt-5">
     <span>
         <h1>Instruments</h1>
-        <a href="#" class="float-right">View all</a>
+        <a href="{{route('cat', $category1)}}" class="float-right">View all</a>
 
     </span>
     <div id="carouselExampleFade" class="carousel slide " data-bs-ride="carousel">
@@ -35,27 +35,33 @@
 
             <div class="carousel-item active">
                 <div class="row">
-                    @for ($i = 0; $i < 4; $i++)
+                    @foreach ($articles1Slide1 as $item)
                         <div class="col-3">
-                            <img src="{{asset('img/T1.jpg')}}" class="img-thumbnail">
-                            <p class="text-center  card-footer">
-                                Name of product/$500
-                            </p>
+                            <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                                <img src="/img/inst_ads/{{$item->image1}}" style="height: 200px" class="img-thumbnail">
+                                <p class="text-center  card-footer">
+                                    {{$item->title}}
+                                </p>
+                            </a>
+                            
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
 
             <div class="carousel-item">
                 <div class="row mx-auto">
-                    @for ($i = 0; $i < 4; $i++)
+                    @foreach ($articles1Slide2 as $item)
                         <div class="col-3">
-                            <img src="{{asset('img/T2.jpg')}}" class="img-thumbnail">
-                            <p class="text-center  card-footer">
-                                Name of product/$500
-                            </p>
+                            <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                                <img src="/img/inst_ads/{{$item->image1}}" style="min-height: 100px" class="img-thumbnail">
+                                <p class="text-center  card-footer">
+                                    {{$item->title}}
+                                </p>
+                            </a>
+                            
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
 
