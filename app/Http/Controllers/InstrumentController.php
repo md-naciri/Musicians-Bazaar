@@ -6,6 +6,7 @@ use App\Http\Requests\StoreInstAdRequest;
 use App\Http\Requests\UpdateInstAdRequest;
 use App\Models\Instrument;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 
@@ -157,7 +158,8 @@ class InstrumentController extends Controller
             unlink(public_path('img/inst_ads/' . $inst->image3));
         }
         Instrument::destroy($id);
-        return redirect()->route('getMyAds')->with('message','advertisement deleted successfully');
+        if(Auth::user()->role==1) return redirect()->route('dashboard')->with('message','advertisement deleted successfully');
+        else return redirect()->route('getMyAds')->with('message','advertisement deleted successfully');
     }
 
     public function articleDisplay($id, $slug){

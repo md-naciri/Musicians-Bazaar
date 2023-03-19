@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\InstrumentController;
 use App\Http\Controllers\Navigation;
@@ -27,9 +28,8 @@ Route::get('/home', function () {
 })->middleware('auth');
 
 Route::prefix('admin')->middleware('admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin-dash.admin.index');
-    })->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/{id}/view', [DashboardController::class, 'userArticles'])->name('user.articles');
     Route::resource('/category', CategoryController::class);
     Route::resource('/subcategory', SubcategoryController::class);
 });
