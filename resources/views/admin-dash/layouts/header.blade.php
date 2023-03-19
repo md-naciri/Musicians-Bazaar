@@ -5,24 +5,25 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Majestic Admin</title>
+  <title>Musician Bazaar</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('admin-dash-res/vendors/mdi/css/materialdesignicons.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin-dash-res/vendors/base/vendor.bundle.base.css')}}">
   <!-- endinject -->
   <!-- plugin css for this page -->
+
+  <link rel="stylesheet" href="{{asset('admin-dash-res/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
   {{--
-  <link rel="stylesheet" href="{{asset('admin-dash-res/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}"> --}}
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-  </script>
+  </script> --}}
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('admin-dash-res/css/style.css')}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{asset('admin-dash-res/images/favicon.png')}}" />
+  <link rel="shortcut icon" href="{{asset('favicon.ico')}}" />
 </head>
 
 <body>
@@ -52,10 +53,14 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="{{asset('admin-dash-res/images/logo.svg')}}"
+          {{-- <a class="navbar-brand brand-logo" href="index.html"><img
+              src="{{asset('admin-dash-res/images/logo.svg')}}" alt="logo" /></a> --}}
+          <a class="navbar-brand brand-logo" href="{{route('home-page')}}"><img src="{{asset('img/logo/lblogo.png')}}"
               alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img
-              src="{{asset('admin-dash-res/images/logo-mini.svg')}}" alt="logo" /></a>
+          {{-- <a class="navbar-brand brand-logo-mini" href="index.html"><img
+              src="{{asset('admin-dash-res/images/logo-mini.svg')}}" alt="logo" /></a> --}}
+          <a class="navbar-brand brand-logo-mini" href="{{route('home-page')}}"><img
+              src="{{asset('img/logo/mblogo.png')}}" alt="logo" /></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>

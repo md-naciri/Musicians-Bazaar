@@ -34,7 +34,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('/subcategory', SubcategoryController::class);
 });
 
-Route::get('/', [Navigation::class, 'navigation']);
+Route::get('/', [Navigation::class, 'navigation'])->name('home-page');
 
 Route::get('/myads/create', [InstrumentController::class, 'create'])->middleware('auth')->name('ad.create');
 Route::post('/myads/store', [InstrumentController::class, 'store'])->middleware('auth')->name('ad.store');

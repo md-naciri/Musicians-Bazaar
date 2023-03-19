@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Musician Bazaar</title>
 
     {{-- bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -44,7 +44,7 @@
                 <div class="container">
                     <div class="flex items-center">
 
-                        <a href="#">
+                        <a href="{{route('home-page')}}">
                             <img style="height: 45px" src="{{asset('img/logo/lblogo.png')}}" class="ml-0" alt="">
                         </a>
 
