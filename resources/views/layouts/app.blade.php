@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -57,38 +59,27 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown position-static">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    aria-expanded="false">
-                                    Menu
-                                </a>
-                                <!-- Dropdown menu -->
-                                <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown"
-                                    style="border-top-left-radius: 0; border-top-right-radius: 0; width: 800px; overflow-x: hidden;">
-                                    {{-- <div class="container"> --}}
-                                        {{-- <div class="row my-4"> --}}
-                                            {{-- <div class="col-md-6 col-lg-3 mb-3 mb-lg-0"> --}}
-                                                @foreach ($navs as $nav)
-                                                    <div class="list-group list-group-flush nav-item dropdown">
-                                                        <a href="#" class="dropdown-toggle list-group-item list-group-item-action"
-                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $nav->name }}</a>
-                                                        <ul class="dropdown-menu">
-                                                            @foreach ($nav->subcategories as $subcategory)
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">{{ $subcategory->name }}</a>
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
-                                                @endforeach
-                                            {{-- </div> --}}
-                                        {{-- </div> --}}
-                                    {{-- </div> --}}
-                                </div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside">Menu Test</a>
+                                <ul class="dropdown-menu shadow">
+                                    @foreach ($navs as $nav)
+                                    <li class="dropend">
+                                        <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                            data-bs-auto-close="outside">{{ $nav->name }}</a>
+                                        <ul class="dropdown-menu shadow">
+                                            @foreach ($nav->subcategories as $subcategory)
+                                            <li><a class="dropdown-item" href="">{{$subcategory->name}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    @endforeach
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
                             </li>
-                            
-                            
-
                         </ul>
 
                         <!-- Right Side Of Navbar -->
@@ -160,7 +151,8 @@
                                 @foreach ($nav->subcategories as $subcategory)
                                 <li>
                                     {{-- {{route('subcat', [$nav->slug, $subcategory->slug])}} --}}
-                                    <a class="dropdown-item" href="{{route('subcat', [$nav->slug, $subcategory->slug])}}">{{$subcategory->name}}</a>
+                                    <a class="dropdown-item"
+                                        href="{{route('subcat', [$nav->slug, $subcategory->slug])}}">{{$subcategory->name}}</a>
                                 </li>
                                 @endforeach
                             </ul>
@@ -169,11 +161,6 @@
                     </ul>
                 </div>
             </nav>
-
-
-
-
-
 
 
             {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -206,7 +193,6 @@
             /* .navbar li a {
                 color: white !important;
             } */
-
 
             .vertical-menu a {
                 background-color: #fff;
