@@ -20,6 +20,10 @@
     @vite('resources/css/app.css')
 
     <!-- Fonts -->
+
+    {{-- icons --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
@@ -41,214 +45,160 @@
 
 <body>
     <div id="app">
-        {{-- <div id=""> --}}
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                <div class="container">
-                    <div class="flex items-center">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <div class="flex items-center">
 
-                        <a href="{{route('home-page')}}">
-                            <img style="height: 45px" src="{{asset('img/logo/lblogo.png')}}" class="ml-0" alt="">
-                        </a>
+                    <a href="{{route('home-page')}}">
+                        <img style="height: 45px" src="{{asset('img/logo/lllogo.png')}}" class="ml-0" alt="">
+                    </a>
 
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                    data-bs-auto-close="outside">Menu Test</a>
-                                <ul class="dropdown-menu shadow">
-                                    @foreach ($navs as $nav)
-                                    <li class="dropend">
-                                        <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
-                                            data-bs-auto-close="outside">{{ $nav->name }}</a>
-                                        <ul class="dropdown-menu shadow">
-                                            @foreach ($nav->subcategories as $subcategory)
-                                            <li><a class="dropdown-item" href="">{{$subcategory->name}}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    @endforeach
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ms-auto">
-                            <!-- Authentication Links -->
-                            @guest
-                            @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                            @endif
-                            @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right me-5" aria-labelledby="navbarDropdown">
-                                    @if (Auth::check() && Auth::user()->role==1)
-                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
-                                        {{ __('Dashboard') }}
-                                    </a>
-                                    @endif
-                                    <a class="dropdown-item" href="{{ route('user.profile') }}">
-                                        {{ __('My profile') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('getMyAds') }}">
-                                        {{ __('My ads') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                            @endguest
-                        </ul>
-                    </div>
                 </div>
-            </nav>
-
-
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navbar-hover">
-                <a class="navbar-brand" href="#"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHover"
-                    aria-controls="navbarDD" aria-expanded="false" aria-label="Navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarHover">
-                    <ul class="navbar-nav mx-auto">
-                        @foreach ($navs as $nav)
-
-                        <li class="nav-item dropdown mx-2">
-                            <a class="nav-link dropdown-toggle" href=""
-                                data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
-                                aria-expanded="false">
-                                {{$nav->name}}
-                            </a>
-                            <ul class="dropdown-menu">
-                                @foreach ($nav->subcategories as $subcategory)
-                                <li>
-                                    {{-- {{route('subcat', [$nav->slug, $subcategory->slug])}} --}}
-                                    <a class="dropdown-item"
-                                        href="{{route('subcat', [$nav->slug, $subcategory->slug])}}">{{$subcategory->name}}</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mx-auto me-5">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle href="#" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside">Find Your Sound</a>
+                            <ul class="sub-menu dropdown-menu shadow">
+                                @foreach ($navs as $nav)
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">{{ $nav->name }}</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item"
+                                                href="{{route('cat', $nav->slug)}}">{{$nav->name}}</a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        @foreach ($nav->subcategories as $subcategory)
+                                        <li><a class="dropdown-item"
+                                                href="{{route('subcat', [$nav->slug, $subcategory->slug])}}">{{$subcategory->name}}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
                                 </li>
                                 @endforeach
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                        @endforeach
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right me-5" aria-labelledby="navbarDropdown">
+                                @if (Auth::check() && Auth::user()->role==1)
+                                <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                    {{ __('Dashboard') }}
+                                </a>
+                                @endif
+                                <a class="dropdown-item" href="{{ route('user.profile') }}">
+                                    {{ __('My profile') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('getMyAds') }}">
+                                    {{ __('My ads') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
                     </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
 
 
-            {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navbar-hover">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHover"
+                aria-controls="navbarDD" aria-expanded="false" aria-label="Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarHover">
+                <ul class="navbar-nav mx-auto">
+                    @foreach ($navs as $nav)
+
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle" href=""
+                            data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
+                            aria-expanded="false">
+                            {{$nav->name}}
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach ($nav->subcategories as $subcategory)
+                            <li>
+                                <a class="dropdown-item"
+                                    href="{{route('subcat', [$nav->slug, $subcategory->slug])}}">{{$subcategory->name}}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
+                            @endforeach
                         </ul>
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </div>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </nav> --}}
+
+
+        {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </div>
-            </nav> --}}
+            </div>
+        </nav> --}}
 
-            <main class="py-4">
-                @yield('content')
-            </main>
-        </div>
-        <style>
-            /* .navbar li a {
-                color: white !important;
-            } */
-
-            .vertical-menu a {
-                background-color: #fff;
-                color: #000;
-                display: block;
-                padding: 12px;
-                text-decoration: none;
-            }
-
-            .vertical-menu a:hover {
-                background-color: red;
-                color: #fff;
-            }
-
-            .vertical-menu a.active {
-                background-color: red;
-                color: #fff;
-            }
-
-            .dropdown:hover>.dropdown-menu {
-                display: block;
-            }
-
-            /* hover dropdown menus */
-            @media only screen and (max-width: 991px) {
-                .navbar-hover .show>.dropdown-toggle::after {
-                    transform: rotate(-90deg);
-                }
-            }
-
-            @media only screen and (min-width: 492px) {
-
-                .navbar-hover .collapse ul li {
-                    position: relative;
-                }
-
-                .navbar-hover .collapse ul li:hover>ul {
-                    display: block
-                }
-
-                .navbar-hover .collapse ul ul {
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    min-width: 250px;
-                    display: none
-                }
-
-                .navbar-hover .collapse ul ul ul {
-                    position: absolute;
-                    top: 0;
-                    left: 100%;
-                    min-width: 250px;
-                    display: none
-                }
-        </style>
+        <main class="body-section">
+            @yield('content')
+        </main>
+    </div>
 </body>
 
 </html>

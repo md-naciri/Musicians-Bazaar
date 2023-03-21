@@ -31,7 +31,7 @@ class Instrument extends Model
     }
 
     public function scopeArticles1Slide1($query, $categoryId){
-        return $query->where('category_id',$categoryId)->orderByDesc('id')->take(4)->get();
+        return $query->where('category_id',$categoryId)->orderByDesc('id')->take(3)->get();
     }
 
     public function scopeArticles1Slide2($query, $categoryId, $sildeBefore){

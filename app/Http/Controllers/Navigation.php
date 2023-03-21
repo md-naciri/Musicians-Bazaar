@@ -10,7 +10,7 @@ class Navigation extends Controller
 {
     public function navigation(){
         //I userd laravel local scope
-        $category1 = Category::CategoryName('Guitars and Basses');
+        $category1 = Category::CategoryName('Strings and Orchestral Instruments');
         $articles1Slide1 = Instrument::Articles1Slide1($category1->id);
         $articles1Slide2 = Instrument::Articles1Slide2($category1->id, $articles1Slide1);
 
