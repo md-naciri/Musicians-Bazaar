@@ -4,7 +4,7 @@
 
 <div class="section-2">
     <div class="container my-5">
-        <div class="row align-items-center mx-3">
+        <div class="row align-items-center mx-3 pt-5">
             <div class="col-md-6">
                 <h2 class="" style="color: #354c5c;">Welcome to Musicians Bazaar</h2>
                 <p class="text-dark fs-5">The hub of all things musical, where buying and selling instruments is a
@@ -18,6 +18,36 @@
         </div>
     </div>
 </div>
+
+{{-- <div class="section-2" id="contactus" style="background-color: #A9A9A9">
+    <div class="container my-5">
+        <div class="row align-items-center mx-3">
+            <div class="col-6">
+                <h1 style="color:#476072;">CONTACT US</h1>
+                <div class="container-fluid contactusform">
+                    <!-- contact us form -->
+                    <div class="md-form mb-0">
+                        <label for="name" class="" style="color:#476072;">Your name</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div class="md-form mb-0">
+                        <label for="name" class="" style="color:#476072;">Your email</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div>
+                        <label for="name" class="" style="color:#476072;">Your message</label>
+                        <textarea name="" id="" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-4">
+                <img src="{{asset('img/static/—Pngtree—hotline service contact us_5413350.png')}}" alt="" srcset=""
+                    class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div> --}}
 
 <div class="section-1">
     <div class="container mt-5">
@@ -162,7 +192,36 @@
     </div>
 </div>
 
-<div style="">
+<div class="section-6 p-4" id="contact-us" style="background-color: #354c5c">
+    <div class="container my-5">
+        <div class="row align-items-center mx-3">
+            <div class="col-md-8">
+                <h2 style="color:#476072;" class="ms-2">CONTACT US</h2>
+                <div class="container-fluid contactusform">
+                    <!-- contact us form -->
+                    <div class="md-form my-2">
+                        <label for="name" class="" style="color:#476072;">Name</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div class="md-form my-2">
+                        <label for="name" class="" style="color:#476072;">Email</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div class="my-2">
+                        <label for="name" class="" style="color:#476072;">Message</label>
+                        <textarea name="" id="" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-md-block d-none text-end">
+                <img src="{{asset('img/static/—Pngtree—hotline service contact us_5413350.png')}}" alt="" srcset=""
+                    class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- <div style="">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -186,111 +245,6 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-</div>
-
-{{-- <div class="container mt-5">
-    <span>
-        <h1>Instruments</h1>
-        <a href="{{route('cat', $category1)}}" class="float-right">View all</a>
-
-    </span>
-    <div id="carouselExampleFade" class="carousel slide " data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-            <div class="carousel-item active">
-                <div class="row">
-                    @foreach ($articles1Slide1 as $item)
-                    <div class="col-3">
-                        <a href="{{route('article.display',[$item->id, $item->slug])}}">
-                            <img src="/img/inst_ads/{{$item->image1}}" style="height: 200px" class="img-thumbnail">
-                            <p class="text-center  card-footer">
-                                {{$item->title}}
-                            </p>
-                        </a>
-
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="row mx-auto">
-                    @foreach ($articles1Slide2 as $item)
-                    <div class="col-3">
-                        <a href="{{route('article.display',[$item->id, $item->slug])}}">
-                            <img src="/img/inst_ads/{{$item->image1}}" style="min-height: 100px" class="img-thumbnail">
-                            <p class="text-center  card-footer">
-                                {{$item->title}}
-                            </p>
-                        </a>
-
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
 </div> --}}
 
-{{-- <div class="container mt-5">
-    <span>
-        <h1>Instruments</h1>
-        <a href="{{route('cat', $category2)}}" class="float-right">View all</a>
-
-    </span>
-    <div id="carouselExampleFade" class="carousel slide " data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-            <div class="carousel-item active">
-                <div class="row">
-                    @foreach ($articles2Slide1 as $item)
-                    <div class="col-3">
-                        <a href="{{route('article.display',[$item->id, $item->slug])}}">
-                            <img src="/img/inst_ads/{{$item->image1}}" style="height: 200px" class="img-thumbnail">
-                            <p class="text-center  card-footer">
-                                {{$item->title}}
-                            </p>
-                        </a>
-
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="row mx-auto">
-                    @foreach ($articles2Slide2 as $item)
-                    <div class="col-3">
-                        <a href="{{route('article.display',[$item->id, $item->slug])}}">
-                            <img src="/img/inst_ads/{{$item->image1}}" style="min-height: 100px" class="img-thumbnail">
-                            <p class="text-center  card-footer">
-                                {{$item->title}}
-                            </p>
-                        </a>
-
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div> --}}
 @endsection

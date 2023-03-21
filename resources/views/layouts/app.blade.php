@@ -45,14 +45,12 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm position-fixed top-0 w-100" style="z-index: 9999;">
             <div class="container">
                 <div class="flex items-center">
-
                     <a href="{{route('home-page')}}">
                         <img style="height: 45px" src="{{asset('img/logo/lllogo.png')}}" class="ml-0" alt="">
                     </a>
-
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -114,7 +112,7 @@
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right me-5" aria-labelledby="navbarDropdown">
+                            <div class="sub-menu dropdown-menu dropdown-menu-right me-5" aria-labelledby="navbarDropdown">
                                 @if (Auth::check() && Auth::user()->role==1)
                                 <a class="dropdown-item" href="{{ route('dashboard') }}">
                                     {{ __('Dashboard') }}

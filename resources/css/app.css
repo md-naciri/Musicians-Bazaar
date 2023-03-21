@@ -80,6 +80,14 @@ a {
     }
 }
 
+.section-6 h2, label{
+    color: #F3EFEF !important;
+}
+
+.section-6 input, textarea{
+    background-color: #F3EFEF !important;
+}
+
 body {
     background-color: #F3EFEF;
 }
