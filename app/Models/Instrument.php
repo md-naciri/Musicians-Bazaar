@@ -30,11 +30,13 @@ class Instrument extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function scopeArticles1Slide1($query, $categoryId){
-        return $query->where('category_id',$categoryId)->orderByDesc('id')->take(3)->get();
+    public function scopeArticles1Slide1($query, $categoryId, $take){
+        return $query->where('category_id',$categoryId)->orderByDesc('id')->take($take)->get();
     }
 
     public function scopeArticles1Slide2($query, $categoryId, $sildeBefore){
         return $query->where('category_id',$categoryId)->whereNotIn('id', $sildeBefore->pluck('id')->toArray())->orderByDesc('id')->take(4)->get();
     }
+
+
 }
