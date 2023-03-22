@@ -11,7 +11,7 @@
                 <p class="text-dark fs-5">The hub of all things musical, where buying and selling instruments is a
                     symphony of simplicity.</p>
                 {{-- <p class="text-dark">Open Your online store and get rich by selling dildo </p> --}}
-                <a href="#" class="btn w-50 btn-style1 mt-3 shadow rounded-3">SHOP NOW</a>
+                <a href="#section-3" class="btn w-50 btn-style2 mt-3 shadow rounded-3">Latest listings</a>
             </div>
             <div class="col-md-6 d-md-block d-none text-end">
                 <img src="{{asset('img/static/sec1pic2.png')}}" alt="" class="img-fluid my-3">
@@ -64,7 +64,7 @@
 </div>
 
 
-<div class="section-3 container mt-5">
+<div id="section-3" class="section-3 container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <p class="fs-5" style="color: #354c5c">The latest listings in {{$category1->name}}.</p>
         <a href="{{route('cat', $category1)}}" class="fs-5" style="color: #8b3f1e">View all</a>
