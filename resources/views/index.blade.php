@@ -4,8 +4,8 @@
 
 
 <div class="section-2">
-    <div class="container my-5">
-        <div class="row align-items-center mx-3 pt-5">
+    <div class="container main-class">
+        <div class="row align-items-center mx-3">
             <div class="col-md-6">
                 <h2 class="" style="color: #354c5c;">Welcome to Musicians Bazaar</h2>
                 <p class="text-dark fs-5">The hub of all things musical, where buying and selling instruments is a

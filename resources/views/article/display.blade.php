@@ -1,22 +1,26 @@
 @extends('layouts.app')
+@section('body-class', 'body-index')
 @section('content')
 
-<div class="container ">
+<div class="container main-class py-5">
     <div class="row">
         <div class="col-md-6">
             <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="/img/inst_ads/{{$article->image1}}" alt="">
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item carousel-fit-image text-center active">
+                        <img src="/img/inst_ads/{{$article->image1}}" alt=""
+                            class="rounded max-height-xxl3 max-height-xl3 max-height-lg3 max-height-md3 max-height-sm">
                     </div>
                     @if ($article->image2)
-                    <div class="carousel-item">
-                        <img src="/img/inst_ads/{{$article->image2}}" alt="">
+                    <div class="carousel-item carousel-fit-image text-center">
+                        <img src="/img/inst_ads/{{$article->image2}}" alt=""
+                            class="rounded max-height-xxl3 max-height-xl3 max-height-lg3 max-height-md3 max-height-sm">
                     </div>
                     @endif
                     @if ($article->image3)
-                    <div class="carousel-item">
-                        <img src="/img/inst_ads/{{$article->image3}}" alt="">
+                    <div class="carousel-item carousel-fit-image text-center">
+                        <img src="/img/inst_ads/{{$article->image3}}" alt=""
+                            class="rounded max-height-xxl3 max-height-xl3 max-height-lg3 max-height-md3 max-height-sm">
                     </div>
                     @endif
                 </div>
@@ -32,15 +36,34 @@
                 </button>
             </div>
             <hr>
-            <div class="card">
-                <div class="card-header">
-                    <h4>{{ $article->title }}</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #354c5c">Seller Info</div>
+                        <div class="card-body" style="background-color: #f3f3f3">
+                            @if (!$article->user->pic)
+                            <img class="mx-auto d-block img-thumbnail" src="/img/profile/man.png" width="130">
+                            @else
+                            <img class="mx-auto d-block img-thumbnail" src="/img/profile/{{$article->user->pic}}"
+                                width="130">
+                            @endif
+                            <p class="text-center">{{ $article->user->name}}</p>
+                            <p class="text-center">{{ $article->phone}}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class="card">
-                <div class="card-body">
-                    <p>{{ $article->text }}</p>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #354c5c">More Info</div>
+                        <div class="card-body" style="background-color: #f3f3f3">
+                            <p>Published at: {{$article->created_at->format('d M Y')}}</p>
+                            <p>Product condition: {{ $article->inst_condition ?? '' }}</p>
+                            <p>Country: {{ $article->country->name ?? 'Not defined' }}</p>
+                            <p>State: {{ $article->state->name ?? 'Not defined' }}</p>
+                            <p>City: {{ $article->city->name ?? 'Not defined' }}</p>
+                            <p>Price: MAD {{ $article->price }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,30 +76,11 @@
                 <span>MAD {{$article->price}}</span>
             </p>
             <hr>
-            <div class="row">
-                <div class="card col-md-6">
-                    <div class="card-header">More Info</div>
-                    <div class="card-body">
-                        <p>Country: {{ $article->country->name ?? 'Not defined' }}</p>
-                        <p>State: {{ $article->state->name ?? 'Not defined' }}</p>
-                        <p>City: {{ $article->city->name ?? 'Not defined' }}</p>
-                        <p>Product condition: {{ $article->inst_condition ?? '' }}</p>
-                    </div>
-                </div>
-                <div class="card col-md-6">
-                    <div class="card-header">Seller Info</div>
-                    <div class="card-body">
-                        @if (!$article->user->pic)
-                        <img class="mx-auto d-block img-thumbnail" src="/img/profile/man.png" width="130">
-                        @else
-                        <img class="mx-auto d-block img-thumbnail" src="/img/profile/{{$article->user->pic}}" width="130">
-                        @endif
-                        <p class="text-center">{{ $article->user->name}}</p>
-                    </div>
+            <div class="card">
+                <div class="card-body" style="background-color: #f3f3f3">
+                    <p>{{ $article->text }}</p>
                 </div>
             </div>
-
-              
         </div>
     </div>
 
