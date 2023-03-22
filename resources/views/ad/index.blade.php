@@ -80,7 +80,7 @@
                             <div class="modal fade" id="staticBackdrop{{$inst->id}}" data-bs-backdrop="static"
                                 data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                 aria-hidden="true">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog modal-dialog-centered">
                                     <form action="{{route('ad.destroy', $inst->id)}}" method="post">@csrf
                                         @method('DELETE')
                                         <div class="modal-content">
@@ -96,7 +96,6 @@
                                                     data-bs-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn"
                                                     style="background-color: var(--bs-danger-text); color:aliceblue;">Delete</button>
-
                                             </div>
                                         </div>
                                     </form>

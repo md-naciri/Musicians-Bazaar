@@ -55,7 +55,8 @@
         <h4 class="text-center mb-2"><strong style="color: #476072;">Find your sound</strong></h4>
         <!-- search bar for product -->
         <div class="input-group md-form form-sm form-2 mb-3">
-            <input class="form-control my-0 py-1 red-border bg-white" type="text" placeholder="Search" aria-label="Search">
+            <input class="form-control my-0 py-1 red-border bg-white" type="text" placeholder="Search"
+                aria-label="Search">
             <div class="input-group-append">
                 <span class="input-group-text" id="basic-text1"><i class="bi bi-search text-dark"></i></span>
             </div>
@@ -66,7 +67,7 @@
 
 <div id="section-3" class="section-3 container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <p class="fs-5" style="color: #354c5c">The latest listings in {{$category1->name}}.</p>
+        <p class="fs-5" style="color: #354c5c">The latest listings in {{$category1->name}}</p>
         <a href="{{route('cat', $category1)}}" class="fs-5" style="color: #8b3f1e">View all</a>
     </div>
     <div class="row">
@@ -75,10 +76,11 @@
         <div class="col-lg-4 col-md-12 mb-4">
             <div class="card bg-image hover-zoom ripple shadow-1-strong rounded img-style1">
                 <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                    <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl2 max-height-xl2 max-height-lg2 max-height-md21 max-height-sm" />
                     <div class="card-footer text-center" style="background-color: #354c5c">
-                        {{$item->title}}
+                        {{$item->title}} 
                     </div>
                 </a>
             </div>
@@ -87,6 +89,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card bg-image hover-zoom ripple shadow-1-strong rounded img-style1">
                 <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                    <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl2 max-height-xl2 max-height-lg2 max-height-md22 max-height-sm" />
                     <div class="card-footer text-center" style="background-color: #354c5c">
@@ -104,6 +107,7 @@
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card bg-image hover-zoom ripple shadow-1-strong rounded img-style1">
                 <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                    <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl max-height-xl max-height-lg max-height-md max-height-sm" />
                     <div class="card-footer text-center" style="background-color: #354c5c">
@@ -135,7 +139,7 @@
 
 <div class="section-4 container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <p class="fs-5" style="color: #354c5c">The latest listings in {{$category2->name}}.</p>
+        <p class="fs-5" style="color: #354c5c">The latest listings in {{$category2->name}}</p>
         <a href="{{route('cat', $category2)}}" class="fs-5" style="color: #8b3f1e">View all</a>
     </div>
 
@@ -144,6 +148,7 @@
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card bg-image hover-zoom ripple shadow-1-strong rounded img-style1">
                 <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                    <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl max-height-xl max-height-lg max-height-md max-height-sm" />
                     <div class="card-footer text-center" style="background-color: #354c5c">
@@ -158,7 +163,7 @@
 
 <div class="section-5 container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <p class="fs-5" style="color: #354c5c">The latest listings in {{$category3->name}}.</p>
+        <p class="fs-5" style="color: #354c5c">The latest listings in {{$category3->name}}</p>
         <a href="{{route('cat', $category3)}}" class="fs-5" style="color: #8b3f1e">View all</a>
     </div>
 
@@ -168,6 +173,7 @@
         <div class="col-lg-4 col-md-12 mb-4">
             <div class="card bg-image hover-zoom ripple shadow-1-strong rounded img-style1">
                 <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                    <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl2 max-height-xl2 max-height-lg2 max-height-md21 max-height-sm" />
                     <div class="card-footer text-center" style="background-color: #354c5c">
@@ -180,6 +186,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card bg-image hover-zoom ripple shadow-1-strong rounded img-style1">
                 <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                    <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl2 max-height-xl2 max-height-lg2 max-height-md22 max-height-sm" />
                     <div class="card-footer text-center" style="background-color: #354c5c">
