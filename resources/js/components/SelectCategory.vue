@@ -31,13 +31,13 @@ export default {
 <template>
     <div class="row">
         <div class="col-md-6">
-            <select class="form-control" name="category_id" v-model="category" @change="getSubcategory">
+            <select class="form-control input-white" name="category_id" v-model="category" @change="getSubcategory">
                 <option value="">Select a category</option>
                 <option v-for="cat in categories" :value="cat.id" :key="cat.id">{{ cat.name }}</option>
             </select>
         </div>
         <div class="col-md-6">
-            <select class="form-control" name="subcategory_id" v-model="subcategory">
+            <select class="form-control input-white" name="subcategory_id" v-model="subcategory">
                 <option value="">Select a subcategory</option>
                 <option v-for="subcat in subcategories" :value="subcat.id" :key="subcat.id">{{ subcat.name }}</option>
             </select>

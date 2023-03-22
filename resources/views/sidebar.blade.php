@@ -14,7 +14,7 @@
         @endif
         <a href="{{route('user.profile')}}" class="{{request()->is('profile')?'active':''}}">Profile</a>
         <a href="{{route('ad.create')}}" class="{{request()->is('myads/create')?'active':''}}">Create ads</a>
-        {{-- <a href="{{route('getMyAds')}}" class="{{request()->is('myads')?'active':''}}">Published ads</a> --}}
+        <a href="{{route('getMyAds')}}" class="{{request()->is('myads')?'active':''}}">My ads</a>
         {{-- <a href="#">Pending ads</a> --}}
         {{-- <a href="#" class="">Message</a> --}}
     </div>

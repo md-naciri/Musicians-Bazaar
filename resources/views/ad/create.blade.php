@@ -1,9 +1,10 @@
 @extends('layouts.app')
+@section('body-class', 'body-index')
 @section('content')
 
 
     {{-- <div class="container my-app"> --}}
-    <div class="container">
+    <div class="container main-class py-5">
         <h2> Hna chi title </h2>
         <div class="row ">
             <div class="col-md-3">
@@ -37,10 +38,10 @@
 
                 <form action="{{route('ad.store')}}" method="post" enctype="multipart/form-data">@csrf
                     <div class="card">
-                        <div class="card-header text-white" style="background-color: red">
+                        <div class="card-header text-white" style="background-color: #354c5c">
                             Post your ad.
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="background-color: #f3f3f3">
                             <label for="file" class="mt-2"><b>Please upload at least one image for your instrument or accessory</b></label>
                             <div class="row">
                                 <div class="col-md-4">
@@ -78,19 +79,19 @@
 
                             <div class="mt-3">
                                 <label for="title"><b>Title</b> (Include instrument/accessory name in ad title)</label>
-                                <input type="text" name="title" class="form-control">
+                                <input type="text" name="title" class="input-white form-control">
                             </div>
                             <div class=" mt-3">
                                 <label for="text"><b>Description</b></label>
-                                <textarea name="text" class="form-control"></textarea>
+                                <textarea name="text" class="input-white form-control"></textarea>
                             </div>
                             <div class=" mt-3">
                                 <label for="price"><b>Price</b></label>
-                                <input type="text" name="price" class="form-control">
+                                <input type="text" name="price" class="input-white form-control">
                             </div>
                             <div class=" mt-3">
                                 <label for="inst_condition"><b>Instrument/accessory condition</b></label>
-                                <select class="form-control" name="inst_condition">
+                                <select class="form-control input-white" name="inst_condition">
                                     <option value="">Select </option>
                                     <option value="New">New</option>
                                     <option value="Like_New">Like New</option>
@@ -101,7 +102,7 @@
                             </div>
                             <div class=" mt-3">
                                 <label for="adress"><b>Adress</b></label>
-                                <input type="text" class="form-control" name="adress">
+                                <input type="text" class="input-white form-control" name="adress">
                             </div>
                             <label for="file" class="mt-3"><b>Select Country, State, and City</b></label>
                             {{-- <div class="row mt-2">
@@ -134,10 +135,10 @@
 
                             <div class=" mt-3">
                                 <label for="phone"><b>Contact phone</b></label>
-                                <input type="tel" class="form-control" name="phone">
+                                <input type="tel" class="input-white form-control" name="phone">
                             </div>
                             <div class=" mt-3">
-                                <button class="btn btn-danger float-right" type="submit">Publish</button>
+                                <button class="btn btn-style2 float-right" type="submit">Publish</button>
                             </div>
 
                         </div>

@@ -18,7 +18,7 @@ export default {
 
 <template>
     <div>
-        <input type="file" class="form-control" name="image2" accept="image/*" @change="showImage">
+        <input type="file" class="form-control input-white" name="image2" accept="image/*" @change="showImage">
         <div>
             <img v-show="url" :src="url" style="width: 100px;">
         </div>
