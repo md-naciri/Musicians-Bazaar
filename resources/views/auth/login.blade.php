@@ -1,12 +1,15 @@
 @extends('layouts.app')
+@section('body-class', 'authback')
 @section('content')
 
-    <div class="container">
+    {{-- <div class="container" >
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card bluring"> --}}
+                    <div class="row container mx-auto d-flex align-items-center justify-content-center" style="height: 100vh;">
+                        <div class="card bluring col-lg-6 col-md-9 col-sm-10">
                     <div class="text-center mt-2">
-                        <h4>Login</h4>
+                        <h4 class="text-white">Login</h4>
                         @if(session('status'))
                         <div class="alert alert-success alert-dismissible fade show mx-auto w-75" role="alert">
                             {{session('status')}}
@@ -57,22 +60,22 @@
                                         <input type="checkbox" class="form-check-input" name="remember" id="remember"
                                             {{ old('remember') ? 'checked' : '' }}>
                                         <label class="form-check-label" for="label">Remember me</label>
-                                    <p><a href="{{route('password.request')}}">Forgotten a password?</a></p>
+                                    <p><a class="text-white" href="{{route('password.request')}}">Forgotten a password?</a></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group row mb-0">
                                 
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-danger">Login</button>
+                                    <button type="submit" class="btn btn-style1">Login</button>
 
                                 </div>
                             </div>
                             
                         </form>
                     </div>
-                </div>
-            </div>
+                {{-- </div>
+            </div> --}}
         </div>
     </div>
 @endsection

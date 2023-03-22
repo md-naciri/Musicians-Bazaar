@@ -43,7 +43,7 @@
     </style>
 </head>
 
-<body>
+<body class="@yield('body-class')">  
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm position-fixed top-0 w-100" style="z-index: 9999;">
             <div class="container">
@@ -196,6 +196,7 @@
         <main class="body-section">
             @yield('content')
         </main>
+
     </div>
 </body>
 

@@ -5,6 +5,26 @@
 /* .navbar li a {
     color: white !important;
 } */
+
+
+
+.bluring{
+    background-color: #ddd5 !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid #eee9 ;
+}
+
+.body-index {
+    background-color: #F3EFEF;
+}
+
+.authback{
+    background-image: url("../backgrounds/authback1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 a {
     text-decoration: none;
 }
@@ -28,6 +48,7 @@ a {
     color: #F3EFEF;
 
 }
+
 
 
 /* XXlarge screens */
@@ -84,12 +105,8 @@ a {
     color: #F3EFEF !important;
 }
 
-.section-6 input, textarea{
+input, textarea{
     background-color: #F3EFEF !important;
-}
-
-body {
-    background-color: #F3EFEF;
 }
 
 .navbar {
@@ -117,6 +134,7 @@ body {
 
 .btn-style1:hover {
     background-color: #d7a98c;
+    border: 1px solid #eee9 ;
 }
 
 .btn-style1:active {

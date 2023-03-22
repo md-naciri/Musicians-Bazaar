@@ -1,13 +1,17 @@
 @extends('layouts.app')
+@section('body-class', 'authback')
 @section('content')
 
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">
-            <div class="card">
-                <div class="text-center mt-2"><h4>Register</h4></div>
+            <div class="card"> --}}
+                <div class="row container mx-auto d-flex align-items-center justify-content-center" style="height: 100vh;">
+                    <div class="card bluring col-lg-6 col-md-9 col-sm-10">
+                <div class="text-center mt-2">
+                <div class="text-center text-white mt-2"><h4>Register</h4></div>
                 <div class="card-body">
-                    <form action="{{route('register')}}" method="post">@csrf
+                    <form class="auth-label" action="{{route('register')}}" method="post">@csrf
                         <div class="form-group row mb-2">
                             <label for="name" class="col-md-4 col-form-label text-md-right">
                                 Name
@@ -65,15 +69,15 @@
                             </div>
                         </div>
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-danger">Register</button>
+                            <div class="">
+                                <button type="submit" class="btn btn-style1">Register</button>
                                 
                             </div>
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
+            {{-- </div>
+        </div> --}}
     </div>
 </div>
 @endsection
