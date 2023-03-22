@@ -5,8 +5,18 @@
 /* .navbar li a {
     color: white !important;
 } */
+.card-body label, h4{
+    color: #354c5c !important; 
+}
 
+.input-white{
+    background-color: #fefefe !important;
+}
 
+.main-class{
+    margin-top: 70px; /* adjust this value to match the height of your navbar */
+    padding-top: 20px; /* adjust this value as needed for your design */
+}
 
 .bluring{
     background-color: #ddd5 !important;
@@ -123,6 +133,7 @@ input, textarea{
 }
 
 .btn-style1 {
+    border-radius: 0%;
     background-color: #354c5c;
     color: #f3efef;
     /* padding: 10px 20px; */
@@ -142,6 +153,21 @@ input, textarea{
     color: #f3efef !important;
 }
 
+.btn-style2 {
+    background-color: #354c5c;
+    color: #f3efef;
+    transition: background-color 0.3s ease;
+}
+
+.btn-style2:hover {
+    background-color: #d7a98c;
+    border: 1px solid #eee9 ;
+}
+
+.btn-style2:active {
+    background-color: #8b3f1e !important;
+    color: #f3efef !important;
+}
 
 
 .navbar-nav .nav-item.dropdown:hover>.dropdown-menu {
@@ -149,7 +175,7 @@ input, textarea{
 }
 
 .vertical-menu a {
-    background-color: #fff;
+    background-color: #f3f3f3;
     color: #000;
     display: block;
     padding: 12px;
@@ -157,13 +183,13 @@ input, textarea{
 }
 
 .vertical-menu a:hover {
-    background-color: red;
-    color: #fff;
+    background-color: #354c5c;
+    color: #f3f3f3;
 }
 
 .vertical-menu a.active {
-    background-color: red;
-    color: #fff;
+    background-color: #354c5c;
+    color: #f3f3f3;
 }
 
 .dropdown:hover>.dropdown-menu {

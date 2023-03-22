@@ -55,7 +55,7 @@
         <h4 class="text-center mb-2"><strong style="color: #476072;">Find your sound</strong></h4>
         <!-- search bar for product -->
         <div class="input-group md-form form-sm form-2 mb-3">
-            <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+            <input class="form-control my-0 py-1 red-border bg-white" type="text" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
                 <span class="input-group-text" id="basic-text1"><i class="bi bi-search text-dark"></i></span>
             </div>
