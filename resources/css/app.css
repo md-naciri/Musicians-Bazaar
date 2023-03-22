@@ -5,30 +5,33 @@
 /* .navbar li a {
     color: white !important;
 } */
-.card-body label, h4{
-    color: #354c5c !important; 
+.card-body label,
+h4 {
+    color: #354c5c !important;
 }
 
-.input-white{
+.input-white {
     background-color: #fefefe !important;
 }
 
-.main-class{
-    margin-top: 70px; /* adjust this value to match the height of your navbar */
-    padding-top: 20px; /* adjust this value as needed for your design */
+.main-class {
+    margin-top: 70px;
+    /* adjust this value to match the height of your navbar */
+    padding-top: 20px;
+    /* adjust this value as needed for your design */
 }
 
-.bluring{
+.bluring {
     background-color: #ddd5 !important;
     backdrop-filter: blur(5px) !important;
-    border: 1px solid #eee9 ;
+    border: 1px solid #eee9;
 }
 
 .body-index {
     background-color: #F3EFEF;
 }
 
-.authback{
+.authback {
     background-image: url("../backgrounds/authback1.jpg");
     background-position: center;
     background-size: cover;
@@ -66,6 +69,7 @@ a {
     .max-height-xxl {
         max-height: 205px;
     }
+
     .max-height-xxl2 {
         max-height: 278px;
     }
@@ -76,6 +80,7 @@ a {
     .max-height-xl {
         max-height: 175px;
     }
+
     .max-height-xl2 {
         max-height: 238px;
     }
@@ -86,6 +91,7 @@ a {
     .max-height-lg {
         max-height: 145px;
     }
+
     .max-height-lg2 {
         max-height: 198px;
     }
@@ -96,9 +102,11 @@ a {
     .max-height-md {
         max-height: 225px;
     }
+
     .max-height-md21 {
         max-height: 465px;
     }
+
     .max-height-md22 {
         max-height: 225px;
     }
@@ -111,11 +119,13 @@ a {
     }
 }
 
-.section-6 h2, label{
+.section-6 h2,
+label {
     color: #F3EFEF !important;
 }
 
-input, textarea{
+input,
+textarea {
     background-color: #F3EFEF !important;
 }
 
@@ -145,7 +155,7 @@ input, textarea{
 
 .btn-style1:hover {
     background-color: #d7a98c;
-    border: 1px solid #eee9 ;
+    border: 1px solid #eee9;
 }
 
 .btn-style1:active {
@@ -161,7 +171,7 @@ input, textarea{
 
 .btn-style2:hover {
     background-color: #d7a98c;
-    border: 1px solid #eee9 ;
+    border: 1px solid #eee9;
 }
 
 .btn-style2:active {
@@ -228,4 +238,45 @@ input, textarea{
         min-width: 250px;
         display: none;
     }
+}
+
+.btn-style3 {
+    background-color: #ffd166;
+    color: #354c5c;
+    transition: background-color 0.3s ease;
+}
+
+.btn-style3:active {
+    background-color: #ffb347 !important;
+    color: #f3efef !important;
+}
+
+.btn-style4 {
+    background-color: #70a1d7;
+    color: #f3efef;
+    transition: background-color 0.3s ease;
+}
+
+.btn-style4:active {
+    background-color: #4f81c7 !important;
+    color: #f3efef !important;
+}
+
+.btn-style5 {
+    background-color: #b30000;
+    color: #f3efef;
+    transition: background-color 0.3s ease;
+}
+
+.btn-style5:active {
+    background-color: #800000 !important;
+    color: #f3efef !important;
+}
+
+.btn-style3:hover,
+.btn-style5:hover,
+.btn-style4:hover {
+    background-color: #e8e8e8;
+    color: #354c5c;
+    border: 1px solid #354c5c31;
 }

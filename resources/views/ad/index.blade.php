@@ -1,14 +1,15 @@
 @extends('layouts.app')
+@section('body-class', 'body-index')
 @section('content')
 
-<div class="container">
+<div class="container main-class py-5">
     <div class="row ">
         <div class="col-md-3">
             @include('sidebar')
         </div>
         <div class="col-md-9">
             @include('admin-dash.include.message')
-            <table class="table table-bordered">
+            <table class="table table-bordered rounded overflow-hidden" style="background-color: #f3f3f3">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -65,15 +66,15 @@
                         </td>
                         <td>{{$inst->title}}</td>
                         <td>MAD {{$inst->price}}</td>
-                        <td><a href="{{route('ad.edit', $inst->id)}}"><button class="btn"
-                                    style="background-color: var(--bs-info-text); color:aliceblue;">Edit</button></a>
+                        <td><a href="{{route('ad.edit', $inst->id)}}"><button class="btn btn-style3"
+                                    >Edit</button></a>
                         </td>
                         <td>
                             <a href="{{route('article.display',[$inst->id, $inst->slug])}}">
-                                <button class="btn" style="background-color: var(--bs-warning-text); color:aliceblue;">View</button>
+                                <button class="btn btn-style4">View</button>
                             </a>
                         </td>
-                        <td><button class="btn" style="background-color: var(--bs-danger-text); color:aliceblue;"
+                        <td><button class="btn btn-style5"
                                 data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$inst->id}}">Delete</button>
                             <!-- Delete Modal -->
                             <div class="modal fade" id="staticBackdrop{{$inst->id}}" data-bs-backdrop="static"
