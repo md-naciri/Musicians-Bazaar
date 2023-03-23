@@ -93,6 +93,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <form action="{{url('search')}}" method="GET" class="d-flex" role="search">
+                            <input class="form-control me-2" name="search" value="" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search text-dark"></i></button>
+                        </form>
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))

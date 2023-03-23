@@ -80,7 +80,7 @@
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl2 max-height-xl2 max-height-lg2 max-height-md21 max-height-sm" />
                     <div class="card-footer text-center" style="background-color: #354c5c">
-                        {{$item->title}} 
+                        {{$item->title}}
                     </div>
                 </a>
             </div>
@@ -222,11 +222,11 @@
                     <div class="mt-3 text-center">
                         <button type="submit" class="btn btn-style2-reversed w-50 ">Submit</button>
                     </div>
-                {{-- </div> --}}
+                    {{--
+                </div> --}}
             </div>
             <div class="col-lg-4 d-lg-block d-none text-end">
-                <img src="{{asset('img/static/1074992_105381-OMRNIN-148.png')}}" alt="" srcset=""
-                    class="img-fluid">
+                <img src="{{asset('img/static/1074992_105381-OMRNIN-148.png')}}" alt="" srcset="" class="img-fluid">
             </div>
         </div>
     </div>
