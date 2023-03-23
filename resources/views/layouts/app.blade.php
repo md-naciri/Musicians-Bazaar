@@ -43,9 +43,10 @@
     </style>
 </head>
 
-<body class="@yield('body-class')">  
+<body class="@yield('body-class')">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm position-fixed top-0 w-100" style="z-index: 9999;">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm position-fixed top-0 w-100"
+            style="z-index: 9999;">
             <div class="container">
                 <div class="flex items-center">
                     <a href="{{route('home-page')}}">
@@ -59,10 +60,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mx-auto me-5">
+                    <ul class="navbar-nav me-5">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle href="#" data-bs-toggle="dropdown"
-                                data-bs-auto-close="outside">Find Your Sound</a>
+                            <a class="nav-link dropdown-toggle" href=" #" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside">Instrument Categories</a>
                             <ul class="sub-menu dropdown-menu shadow">
                                 @foreach ($navs as $nav)
                                 <li class="dropend">
@@ -89,13 +90,23 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-lg-block d-none" href="">AboutUs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-lg-block d-none" href="{{route('home-page')}}#contact-us">ContactUs</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <form action="{{url('search')}}" method="GET" class="d-flex" role="search">
-                            <input class="form-control me-2" name="search" value="" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search text-dark"></i></button>
+                            <div style="position: relative; display: flex;">
+                                <input class="form-control me-2" name="search" value="" type="search"
+                                    placeholder="Search" aria-label="Search">
+                                <button style="position: absolute; right: 7px;" class="btn" type="submit"><i
+                                        class="bi bi-search text-dark"></i></button>
+                            </div>
                         </form>
                         <!-- Authentication Links -->
                         @guest
@@ -116,7 +127,8 @@
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-                            <div class="sub-menu dropdown-menu dropdown-menu-right me-5" aria-labelledby="navbarDropdown">
+                            <div class="sub-menu dropdown-menu dropdown-menu-right me-5"
+                                aria-labelledby="navbarDropdown">
                                 @if (Auth::check() && Auth::user()->role==1)
                                 <a class="dropdown-item" href="{{ route('dashboard') }}">
                                     {{ __('Dashboard') }}

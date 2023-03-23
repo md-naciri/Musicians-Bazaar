@@ -5,7 +5,7 @@
 
 <div class="section-2">
     <div class="container main-class">
-        <div class="row align-items-center mx-3">
+        <div class="row align-items-center">
             <div class="col-md-6">
                 <h2 class="" style="color: #354c5c;">Welcome to Musicians Bazaar</h2>
                 <p class="text-dark fs-5">The hub of all things musical, where buying and selling instruments is a
@@ -54,13 +54,24 @@
     <div class="container mt-5">
         <h4 class="text-center mb-2"><strong style="color: #476072;">Find your sound</strong></h4>
         <!-- search bar for product -->
-        <div class="input-group md-form form-sm form-2 mb-3">
+        {{-- <div class="input-group md-form form-sm form-2 mb-3">
             <input class="form-control my-0 py-1 red-border bg-white" type="text" placeholder="Search"
                 aria-label="Search">
             <div class="input-group-append">
                 <span class="input-group-text" id="basic-text1"><i class="bi bi-search text-dark"></i></span>
             </div>
-        </div>
+        </div> --}}
+        {{-- <div class="md-form form-sm form-2 mb-3" style="position: relative; display: flex;"> --}}
+            <form action="{{url('search')}}" method="GET" class="d-flex d-form form-sm form-2 mb-3"
+                style="position: relative;" role="search">
+                <input class="form-control me-2 bg-white" name="search" value="" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn" type="submit" style="position: absolute; right: 7px;">
+                    <i class="bi bi-search text-dark"></i>
+                </button>
+            </form>
+            {{--
+        </div> --}}
     </div>
 </div>
 
