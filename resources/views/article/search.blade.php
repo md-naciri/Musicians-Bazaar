@@ -21,7 +21,7 @@
             <form action="{{url()->current()}}" method="get">
                 <div class="card">
                     <div class="card-body" style="background-color: #f3f3f3">
-                        {{-- <input type="hidden" name="searchArticle" value="{{ implode(',', $searchArticle->toArray()['data']) }}"> --}}
+                        <input type="hidden" name="search" value="{{ request('search') }}">
                         <div class="mb-3">
                             <label for="minPrice" class="form-label">Minimum Price</label>
                             <input type="text" class="form-control input-white" id="" name="minPrice">

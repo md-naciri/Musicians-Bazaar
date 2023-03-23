@@ -8,22 +8,20 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     public function searchArticle(Request $request){
-        $sendedBackArticles = explode(',', $request->input('sendedBackArticles'));
-        // dd($sendedBackArticles);
-
-
-
-
-
-
-
-
-
-
-
-
         if($request->search){
-            $searchArticle = Instrument::where('title','LIKE','%'.$request->search.'%')->latest()->paginate();
+            if($request->minPrice || $request->maxPrice){
+                $searchArticle = Instrument::where('title','LIKE','%'.$request->search.'%')
+                ->when($request->minPrice, function($query, $minPrice){
+                    return $query->whereRaw("CAST(price AS float) >= ?", [(float)$minPrice]);
+                })
+                ->when($request->maxPrice, function($query, $maxPrice){
+                    return $query->whereRaw("CAST(price AS float) <= ?", [(float)$maxPrice]);
+                })
+                ->latest()->paginate();
+            }
+            else{
+                $searchArticle = Instrument::where('title','LIKE','%'.$request->search.'%')->latest()->paginate();
+            }
             return view('article.search',['searchArticle'=>$searchArticle]);
         }
         else{
