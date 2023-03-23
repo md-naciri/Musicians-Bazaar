@@ -202,10 +202,10 @@
 
 <div class="section-6 p-4" id="contact-us" style="background-color: #354c5c">
     <div class="container my-5">
-        <div class="row align-items-center mx-3">
-            <div class="col-md-8">
-                <h2 style="color:#476072;" class="ms-2">CONTACT US</h2>
-                <div class="container-fluid contactusform">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 style="color:#476072;">CONTACT US</h2>
+                {{-- <div class="container-fluid"> --}}
                     <!-- contact us form -->
                     <div class="md-form my-2">
                         <label for="name" class="" style="color:#476072;">Name</label>
@@ -217,12 +217,15 @@
                     </div>
                     <div class="my-2">
                         <label for="name" class="" style="color:#476072;">Message</label>
-                        <textarea name="" id="" rows="5" class="form-control"></textarea>
+                        <textarea name="" id="" rows="" class="form-control"></textarea>
                     </div>
-                </div>
+                    <div class="mt-3 text-center">
+                        <button type="submit" class="btn btn-style2-reversed w-50 ">Submit</button>
+                    </div>
+                {{-- </div> --}}
             </div>
-            <div class="col-md-4 d-md-block d-none text-end">
-                <img src="{{asset('img/static/—Pngtree—hotline service contact us_5413350.png')}}" alt="" srcset=""
+            <div class="col-lg-4 d-lg-block d-none text-end">
+                <img src="{{asset('img/static/1074992_105381-OMRNIN-148.png')}}" alt="" srcset=""
                     class="img-fluid">
             </div>
         </div>
