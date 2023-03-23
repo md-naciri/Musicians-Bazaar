@@ -20,7 +20,7 @@
                             @endif
                         </div>
                         <div class="card-body">
-                            <form action="" method="post">@csrf
+                            <form action="{{ route('login') }}" method="post">@csrf
                                 <div class="form-group row mb-3">
                                     <label for="email" class="col-md-3 col-form-label text-md-right">
                                         Email

@@ -228,7 +228,8 @@ textarea {
 .btn-style2:hover,
 .btn-style1:hover {
     background-color: #9e7f62;
-    border: 1px solid #eee9;
+    /* border: 1px solid #eee9; */
+    border: 1px solid #354c5c31;
     /* border: 1px solid #9e7f62; */
     color: #fff;
 }

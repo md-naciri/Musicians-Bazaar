@@ -81,6 +81,16 @@
                     <p>{{ $article->text }}</p>
                 </div>
             </div>
+            <hr>
+            <p>
+                <a class="text-dark"
+                    href="{{route('subcat', [$article->category->slug, $article->subcategory->slug])}}">Browse for more
+                    {{$article->subcategory->name}} instruments</a>
+            </p>
+            <p>
+                <a class="text-dark" href="{{route('cat', $article->category->slug)}}">Browse for more
+                    {{$article->category->name}}</a>
+            </p>
         </div>
     </div>
 

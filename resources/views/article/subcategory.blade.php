@@ -6,14 +6,14 @@
         <div class="row ">
             <div class="col-md-3">
                 <div class="card">
-                    <div class="card-header text-white text-center" style="background-color: #354c5c">Filter ::</div>
+                    <div class="card-header text-center" style="background-color: #354c5c">
+                        <a class="text-white" href="{{route('cat', $articleSubcats->first()->category->slug)}}">{{$articleSubcats->first()->category->name}}</a>
+                    </div>
                     <div class="card-body vertical-menu" style="background-color: #f3f3f3">
                         @foreach ($articleSubcats as $articleSubcat) 
-                        <p>
                             <a href="{{($articleSubcat->subcategory->slug)??''}}">
                                 {{$articleSubcat->subcategory->name}}
                             </a>
-                        </p>
                         @endforeach
                     </div>
                 </div>

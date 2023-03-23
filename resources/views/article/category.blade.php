@@ -6,7 +6,9 @@
     <div class="row">
         <div class="col-md-3 mb-4">
             <div class="card">
-                <div class="card-header text-white text-center" style="background-color: #354c5c">Filter ::</div>
+                <div class="card-header text-white text-center" style="background-color: #354c5c">
+                    {{$articleSubcats->first()->category->name}}
+                </div>
                 <div class="card-body vertical-menu" style="background-color: #f3f3f3">
                     @foreach ($articleSubcats as $articleSubcat)
                         <a href="{{url()->current()}}/{{($articleSubcat->subcategory->slug)??''}}">

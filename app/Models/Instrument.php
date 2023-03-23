@@ -10,6 +10,10 @@ class Instrument extends Model
     use HasFactory;
     protected $guarded = [];
 
+    public function category(){
+        return $this->hasOne(Category::class, 'id', 'category_id');
+    }
+
     public function subcategory(){
         return $this->hasOne(Subcategory::class, 'id', 'subcategory_id');
     }
@@ -37,6 +41,5 @@ class Instrument extends Model
     public function scopeArticles1Slide2($query, $categoryId, $sildeBefore){
         return $query->where('category_id',$categoryId)->whereNotIn('id', $sildeBefore->pluck('id')->toArray())->orderByDesc('id')->take(4)->get();
     }
-
 
 }

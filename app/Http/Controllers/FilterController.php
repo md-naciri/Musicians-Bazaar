@@ -24,9 +24,9 @@ class FilterController extends Controller
         ->when($request->maxPrice, function($query, $maxPrice){
             return $query->whereRaw("CAST(price AS float) <= ?", [(float)$maxPrice]);
         })
-        ->get();
+        ->orderByDesc('id')->get();
 
-        $articles = $catSlag->articles;
+        $articles = $catSlag->articles()->orderByDesc('id')->get();
         $articleSubcat = $catSlag->articles->unique('subcategory_id');
 
         $articles = $request->minPrice || $request->maxPrice ? $articlePrice : $articles;
@@ -44,9 +44,9 @@ class FilterController extends Controller
         ->when($request->maxPrice, function($query, $maxPrice){
             return $query->whereRaw("CAST(price AS float) <= ?", [(float)$maxPrice]);
         })
-        ->get();
+        ->orderByDesc('id')->get();
 
-        $articles = $subcatSlug->articles;
+        $articles = $subcatSlug->articles()->orderByDesc('id')->get();
         $articleSubcat = $catSlag->articles->unique('subcategory_id');
 
         $articles = $request->minPrice || $request->maxPrice ? $articlePrice : $articles;
