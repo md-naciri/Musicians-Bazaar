@@ -367,7 +367,7 @@ textarea {
 
 .tab-style .nav-link:hover{
     border: 1px solid #d7d7d8;
-    background-color: #f3f3f3 !important;
+    background-color: #f3f3f3 ;
 }
 
 .tab-text-style .active{
