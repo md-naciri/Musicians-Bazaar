@@ -14,7 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $articles = Instrument::latest()->paginate(3);
+        $articles = Instrument::latest()->paginate(10);
         return view('admin-dash.admin.index',['articles'=>$articles]);
     }
 
