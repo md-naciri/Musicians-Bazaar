@@ -91,7 +91,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-lg-block d-none" href="">AboutUs</a>
+                            <a class="nav-link d-lg-block d-none" href="{{ route('about') }}">AboutUs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-lg-block d-none" href="{{route('home-page')}}#contact-us">ContactUs</a>

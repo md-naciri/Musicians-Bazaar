@@ -52,3 +52,7 @@ Route::get('/article/{catSlag}/{subcatSlug}', [FilterController::class, 'article
 Route::get('/articl/{id}/{slug}', [InstrumentController::class, 'articleDisplay'])->name('article.display');
 
 Route::get('search', [SearchController::class, 'searchArticle']);
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
