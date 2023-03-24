@@ -47,6 +47,7 @@ Route::delete('/myads/delete/{id}', [InstrumentController::class, 'destroy'])->m
 
 Route::get('/profile', [UserProfileController::class, 'index'])->middleware('auth')->name('user.profile');
 Route::put('/profile', [UserProfileController::class, 'updateUser'])->middleware('auth')->name('update.user');
+Route::delete('/profile', [UserProfileController::class, 'deleteUser'])->middleware('auth')->name('delete.user');
 
 Route::get('/article/{catSlag}', [FilterController::class, 'articleByCat'])->name('cat');
 Route::get('/article/{catSlag}/{subcatSlug}', [FilterController::class, 'articleBySubcat'])->name('subcat');

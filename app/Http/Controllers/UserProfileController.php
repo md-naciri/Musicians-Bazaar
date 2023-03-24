@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Instrument;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -34,5 +35,12 @@ class UserProfileController extends Controller
         ]);
         return redirect()->back()->with('message','Profile updated successfully');
         
+    }
+
+    public function deleteUser(){
+        $user = User::find(auth()->user()->id);
+        Instrument::where('user_id', $user->id)->delete();
+        $user->delete();
+        return redirect('/');
     }
 }

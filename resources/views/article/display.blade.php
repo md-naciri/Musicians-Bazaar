@@ -82,11 +82,13 @@
                 </div>
             </div>
             <hr>
+            @if ($article->subcategory_id)
             <p>
                 <a class="text-dark"
                     href="{{route('subcat', [$article->category->slug, $article->subcategory->slug])}}">Browse for more
                     {{$article->subcategory->name}} instruments</a>
             </p>
+            @endif
             <p>
                 <a class="text-dark" href="{{route('cat', $article->category->slug)}}">Browse for more
                     {{$article->category->name}}</a>
