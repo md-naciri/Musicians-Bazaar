@@ -69,7 +69,15 @@
                                         <button type="submit" class="btn btn-style1 w-100">Login</button>
                                     </div>
                                 </div>
-
+                                <hr class="">
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-9 offset-md-3">
+                                        {{-- <button type="submit" class="btn btn-style1 w-100">Register</button> --}}
+                                        <a href="{{route('facebook.redirect')}}" class="btn btn-style1 w-100" style="background-color: #39579a !important;">
+                                            <i class="bi bi-facebook"></i> &nbsp; &nbsp;Login with Facebook
+                                        </a>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                         {{--

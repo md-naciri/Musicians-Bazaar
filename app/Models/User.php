@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'adress',
         'pic',
+        'fb_id',
     ];
 
     /**

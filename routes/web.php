@@ -7,6 +7,7 @@ use App\Http\Controllers\FilterController;
 use App\Http\Controllers\InstrumentController;
 use App\Http\Controllers\Navigation;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserProfileController;
 
@@ -56,3 +57,6 @@ Route::get('search', [SearchController::class, 'searchArticle']);
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+Route::get('/auth/facebook', [SocialiteController::class, 'facebookRedirect'])->name('facebook.redirect');
+Route::get('/auth/facebook/back', [SocialiteController::class, 'facebookBack'])->name('facebook.back');
