@@ -39,6 +39,18 @@ class UserProfileController extends Controller
 
     public function deleteUser(){
         $user = User::find(auth()->user()->id);
+        $instruments = Instrument::where('user_id', $user->id)->get();
+        foreach ($instruments as $inst) {
+            if ($inst->image1) {
+                unlink(public_path('img/inst_ads/' . $inst->image1));
+            }
+            if ($inst->image2) {
+                unlink(public_path('img/inst_ads/' . $inst->image2));
+            }
+            if ($inst->image3) {
+                unlink(public_path('img/inst_ads/' . $inst->image3));
+            }
+        }
         Instrument::where('user_id', $user->id)->delete();
         $user->delete();
         return redirect('/');
