@@ -205,9 +205,20 @@ textarea {
 .navbar a {
     color: #F3EFEF;
 }
+.navbar a:hover {
+    color: #cba37e;
+}
 
 .sub-menu a {
     color: #354c5c;
+    /* background-color: #F3EFEF; */
+}
+.sub-menu a:hover {
+    color: #F3EFEF;
+    background-color: #354c5c;
+}
+
+.drop-style{
     background-color: #F3EFEF;
 }
 
@@ -378,3 +389,18 @@ textarea {
     background-color: #f3f3f3 !important;
     border: 1px solid #d7d7d8;
 }
+
+.drop-style .dropdown-toggle::after {
+    content: '';
+    border-top: .3em solid transparent;
+    border-right: none;
+    border-bottom: .3em solid transparent;
+    border-left: .3em solid;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+  
+  
+  

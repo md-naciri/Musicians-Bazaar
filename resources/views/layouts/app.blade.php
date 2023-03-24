@@ -64,12 +64,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href=" #" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside">Instrument Categories</a>
-                            <ul class="sub-menu dropdown-menu shadow">
+                            <ul class="sub-menu dropdown-menu drop-style shadow">
                                 @foreach ($navs as $nav)
                                 <li class="dropend">
                                     <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
                                         data-bs-auto-close="outside">{{ $nav->name }}</a>
-                                    <ul class="dropdown-menu shadow">
+                                    <ul class="dropdown-menu shadow drop-style">
                                         <li><a class="dropdown-item"
                                                 href="{{route('cat', $nav->slug)}}">{{$nav->name}}</a>
                                         </li>
@@ -127,7 +127,7 @@
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-                            <div class="sub-menu dropdown-menu dropdown-menu-right me-5"
+                            <div class="sub-menu dropdown-menu drop-style dropdown-menu-right me-5"
                                 aria-labelledby="navbarDropdown">
                                 @if (Auth::check() && Auth::user()->role==1)
                                 <a class="dropdown-item" href="{{ route('dashboard') }}">
