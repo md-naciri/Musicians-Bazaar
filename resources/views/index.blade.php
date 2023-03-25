@@ -218,21 +218,24 @@
                 <h2 style="color:#476072;">CONTACT US</h2>
                 {{-- <div class="container-fluid"> --}}
                     <!-- contact us form -->
-                    <div class="md-form my-2">
-                        <label for="name" class="" style="color:#476072;">Name</label>
-                        <input type="text" id="name" name="name" class="form-control">
-                    </div>
-                    <div class="md-form my-2">
-                        <label for="name" class="" style="color:#476072;">Email</label>
-                        <input type="text" id="name" name="name" class="form-control">
-                    </div>
-                    <div class="my-2">
-                        <label for="name" class="" style="color:#476072;">Message</label>
-                        <textarea name="" id="" rows="" class="form-control"></textarea>
-                    </div>
-                    <div class="mt-3 text-center">
-                        <button type="submit" class="btn btn-style2-reversed w-50 ">Submit</button>
-                    </div>
+                    <form action="{{route('contact.us')}}" method="POST">
+                        @csrf
+                        <div class="md-form my-2">
+                            <label for="name" class="" style="color:#476072;">Name</label>
+                            <input type="text" id="name" name="name" class="form-control">
+                        </div>
+                        <div class="md-form my-2">
+                            <label for="email" class="" style="color:#476072;">Email</label>
+                            <input type="text" id="email" name="email" class="form-control">
+                        </div>
+                        <div class="my-2">
+                            <label for="content" class="" style="color:#476072;">Message</label>
+                            <textarea name="content" id="" rows="" class="form-control"></textarea>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <button type="submit" class="btn btn-style2-reversed w-50 ">Submit</button>
+                        </div>
+                    </form>
                     {{--
                 </div> --}}
             </div>

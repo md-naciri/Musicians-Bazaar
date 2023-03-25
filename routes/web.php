@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FilterController;
@@ -61,3 +62,5 @@ Route::get('/about', function () {
 
 Route::get('/auth/facebook', [SocialiteController::class, 'facebookRedirect'])->name('facebook.redirect');
 Route::get('/auth/facebook/back', [SocialiteController::class, 'facebookBack'])->name('facebook.back');
+
+Route::post('/contact', [ContactController::class, 'contactUs'])->name('contact.us');
