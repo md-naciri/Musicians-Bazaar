@@ -260,7 +260,7 @@ textarea {
 
 .btn-style2-reversed {
     background-color: #9e7f62;
-    color: #354c5c;
+    color: #f3f3f3;
     transition: background-color 0.3s ease;
 }
 .btn-style2-reversed:hover {

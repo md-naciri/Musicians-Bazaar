@@ -55,6 +55,11 @@
                                 </div>
                             </div>
 
+                            <div class="mt-3">
+                                <label for="title"><b>Upload a video</b></label>
+                                <input type="file" name="video" class="input-white form-control" value="{{old('video')}}">
+                            </div>
+
                             <label for="file" class="mt-3"><b>Select a category and subcategory</b></label>
                             {{-- <div class="row">
                                 <div class="col-md-6">
@@ -79,20 +84,20 @@
 
                             <div class="mt-3">
                                 <label for="title"><b>Title</b> (Include instrument/accessory name in ad title)</label>
-                                <input type="text" name="title" class="input-white form-control">
+                                <input type="text" name="title" class="input-white form-control" value="{{old('title')}}">
                             </div>
                             <div class=" mt-3">
                                 <label for="text"><b>Description</b></label>
-                                <textarea name="text" class="input-white form-control"></textarea>
+                                <textarea name="text" class="input-white form-control" value="{{old('text')}}"></textarea>
                             </div>
                             <div class=" mt-3">
                                 <label for="price"><b>Price</b></label>
-                                <input type="text" name="price" class="input-white form-control">
+                                <input type="text" name="price" class="input-white form-control" value="{{old('price')}}">
                             </div>
                             <div class=" mt-3">
                                 <label for="inst_condition"><b>Instrument/accessory condition</b></label>
                                 <select class="form-control input-white" name="inst_condition">
-                                    <option value="">Select </option>
+                                    <option value="" selected disabled hidden>Instrument Condition</option>
                                     <option value="New">New</option>
                                     <option value="Like_New">Like New</option>
                                     <option value="Good">Used - Good</option>
@@ -102,7 +107,7 @@
                             </div>
                             <div class=" mt-3">
                                 <label for="adress"><b>Adress</b></label>
-                                <input type="text" class="input-white form-control" name="adress">
+                                <input type="text" class="input-white form-control" name="adress" value="{{old('adress')}}">
                             </div>
                             <label for="file" class="mt-3"><b>Select Country, State, and City</b></label>
                             {{-- <div class="row mt-2">
@@ -135,7 +140,7 @@
 
                             <div class=" mt-3">
                                 <label for="phone"><b>Contact phone</b></label>
-                                <input type="tel" class="input-white form-control" name="phone">
+                                <input type="tel" class="input-white form-control" name="phone" value="{{old('phone')}}">
                             </div>
                             <div class=" mt-3">
                                 <button class="btn btn-style2 float-right" type="submit">Publish</button>

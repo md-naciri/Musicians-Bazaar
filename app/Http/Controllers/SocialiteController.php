@@ -19,7 +19,7 @@ class SocialiteController extends Controller
     public function facebookBack()
     {
         
-        try {
+        // try {
             $user = Socialite::driver('facebook')->user();
             $member = User::where('fb_id', $user->id)->first();
             if ($member) {
@@ -38,8 +38,8 @@ class SocialiteController extends Controller
                 Auth::login($register);
                 return redirect('/');
             }
-        } catch (\Throwable $th) {
-            dd($th->getMessage());
-        }
+        // } catch (\Throwable $th) {
+        //     dd($th->getMessage());
+        // }
     }
 }

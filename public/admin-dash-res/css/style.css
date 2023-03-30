@@ -22642,7 +22642,7 @@ dl li {
 }
 
 .navbar .navbar-brand-wrapper {
-  background: #ffffff;
+  background: #354c5c;
   border-bottom: 1px solid #e3e3e3;
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -22651,6 +22651,10 @@ dl li {
   width: 257px;
   height: 60px;
   border-right: 1px solid #e3e3e3;
+}
+
+.navbar .navbar-brand-wrapper span:before{
+  color: #F3EFEF !important;
 }
 
 .navbar .navbar-brand-wrapper .navbar-brand-inner-wrapper {
@@ -22717,7 +22721,7 @@ dl li {
 }
 
 .navbar .navbar-menu-wrapper {
-  background: #ffffff;
+  background: #354c5c;
   transition: width 0.25s ease;
   -webkit-transition: width 0.25s ease;
   -moz-transition: width 0.25s ease;
@@ -22728,6 +22732,12 @@ dl li {
   width: calc(100% - 257px);
   height: 60px;
   border-bottom: 1px solid #e3e3e3;
+}
+.navbar-menu-wrapper span, .navbar-menu-wrapper a{
+  color: #F3EFEF !important;
+}
+.navbar-menu-wrapper .dropdown-menu{
+  background-color: #354c5c;
 }
 
 @media (max-width: 991px) {
@@ -23188,3 +23198,5 @@ dl li {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+

@@ -94,6 +94,8 @@
                     {{$article->category->name}}</a>
             </p>
             <hr>
+
+            
             <div class="border border-dark-subtle rounded p-2" id="disqus_thread" style="background-color: #f3f3f3">
             </div>
             <script>
