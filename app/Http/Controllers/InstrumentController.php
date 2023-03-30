@@ -65,6 +65,14 @@ class InstrumentController extends Controller
             $data['image3'] = "$image3name";
         };
 
+        // $video = $request->file('video');
+        // $destinationPath = 'img/inst_ads';
+        // $videoname = Str::uuid() . "." . $video->getClientOriginalExtension();
+        // $video->move($destinationPath, $videoname);
+        // $data['video'] = "$videoname";
+        // $video = cloudinary()->upload($request->file('video')->getRealPath())->getSecurePath();
+        // dd($video);
+
         $data['slug']=Str::slug($data['title']);
 
         Instrument::create($data);
