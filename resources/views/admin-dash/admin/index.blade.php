@@ -52,7 +52,7 @@
                       <div class="modal fade" id="exampleModal{{$article->id}}" tabindex="-1"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                          <form action="{{route('ad.destroy', $article->id)}}" method="post">@csrf
+                          <form action="{{route('admin.ad.destroy', $article->id)}}" method="post">@csrf
                             @method('DELETE')
                             <div class="modal-content">
                               <div class="modal-header">

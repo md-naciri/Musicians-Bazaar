@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,8 @@ Route::get('/myads', [InstrumentController::class, 'index'])->middleware('auth')
 Route::get('/myads/edit/{id}', [InstrumentController::class, 'edit'])->middleware('auth')->name('ad.edit');
 Route::put('/myads/update/{id}', [InstrumentController::class, 'update'])->middleware('auth')->name('ad.update');
 Route::delete('/myads/delete/{id}', [InstrumentController::class, 'destroy'])->middleware('auth')->name('ad.destroy');
+Route::delete('admin/ads/{id}', [AdminController::class, 'destroy'])->middleware('auth')->name('admin.ad.destroy');
+
 
 Route::get('/profile', [UserProfileController::class, 'index'])->middleware('auth')->name('user.profile');
 Route::put('/profile', [UserProfileController::class, 'updateUser'])->middleware('auth')->name('update.user');
