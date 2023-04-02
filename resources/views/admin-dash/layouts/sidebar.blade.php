@@ -2,36 +2,23 @@
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="mdi mdi-home menu-icon"></i>
             <span class="menu-title">Dashboard</span>
           </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <i class="mdi mdi-circle-outline menu-icon"></i>
-            <span class="menu-title">Category</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-basic">
-            <ul class="nav flex-column sub-menu">
-              <li class=""> <a class="nav-link" href="{{route('category.create')}}">Add a category</a></li>
-              <li class=""> <a class="nav-link" href="{{route('category.index')}}">Manage categories</a></li>
-            </ul>
-          </div>
-        </li>
+        </li> --}}
 
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#subc" aria-expanded="false" aria-controls="subc">
-            <i class="mdi mdi-circle-outline menu-icon"></i>
-            <span class="menu-title">Subcategory</span>
-            <i class="menu-arrow"></i>
+          <a class="nav-link">
+            {{-- <i class="mdi mdi-circle-outline menu-icon"></i> --}}
+            {{-- <span class="menu-title">Category</span> --}}
+            {{-- <i class="menu-arrow"></i> --}}
           </a>
-          <div class="collapse" id="subc">
+          <div class="collapse" id="ui-bassic">
             <ul class="nav flex-column sub-menu">
-              <li class=""> <a class="nav-link" href="{{route('subcategory.create')}}">Add a subcategory</a></li>
-              <li class=""> <a class="nav-link" href="{{route('subcategory.index')}}">Manage subcategories</a></li>
+              <li><a class="nav-link" href="{{route('category.create')}}">Add a category</a></li>
+              <li><a class="nav-link" href="{{route('category.index')}}">Manage categories</a></li>
             </ul>
           </div>
         </li>
@@ -42,7 +29,44 @@
             <span class="menu-title">Advertisments</span>
           </a>
         </li>
+        
         <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <i class="mdi mdi-view-headline menu-icon"></i>
+            <span class="menu-title">Category</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li><a class="nav-link" href="{{route('category.create')}}">Add a category</a></li>
+              <li><a class="nav-link" href="{{route('category.index')}}">Manage categories</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#subc" aria-expanded="false" aria-controls="subc">
+            <i class="mdi mdi-view-headline menu-icon"></i>
+            <span class="menu-title">Subcategory</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="subc">
+            <ul class="nav flex-column sub-menu">
+              <li><a class="nav-link" href="{{route('subcategory.create')}}">Add a subcategory</a></li>
+              <li><a class="nav-link" href="{{route('subcategory.index')}}">Manage subcategories</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('users.index') }}">
+            <i class="mdi mdi-view-headline menu-icon"></i>
+            <span class="menu-title">Users</span>
+          </a>
+        </li>
+        {{-- <li class="nav-item">
           <a class="nav-link" href="pages/charts/chartjs.html">
             <i class="mdi mdi-chart-pie menu-icon"></i>
             <span class="menu-title">Charts</span>
@@ -75,12 +99,12 @@
               <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
             </ul>
           </div>
-        </li>
-        <li class="nav-item">
+        </li> --}}
+        {{-- <li class="nav-item">
           <a class="nav-link" href="documentation/documentation.html">
             <i class="mdi mdi-file-document-box-outline menu-icon"></i>
             <span class="menu-title">Documentation</span>
           </a>
-        </li>
+        </li> --}}
       </ul>
     </nav>

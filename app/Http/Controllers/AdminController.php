@@ -3,73 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\Instrument;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function showUsers()
     {
-        //
+        $users = User::all();
+        return view('admin-dash.admin.users', compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function deleteUser($id)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        $user = User::findOrFail($id);
+        $instruments = Instrument::where('user_id', $user->id)->get();
+        foreach ($instruments as $inst) {
+            if ($inst->image1) {
+                unlink(public_path('img/inst_ads/' . $inst->image1));
+            }
+            if ($inst->image2) {
+                unlink(public_path('img/inst_ads/' . $inst->image2));
+            }
+            if ($inst->image3) {
+                unlink(public_path('img/inst_ads/' . $inst->image3));
+            }
+        }
+        Instrument::where('user_id', $user->id)->delete();
+        $user->delete();
+        return redirect()->route('users.index')->with('message', 'User deleted successfully');
     }
 
     /**
@@ -89,6 +53,6 @@ class AdminController extends Controller
             unlink(public_path('img/inst_ads/' . $inst->image3));
         }
         Instrument::destroy($ad);
-        return redirect()->route('dashboard')->with('message','advertisement deleted successfully');
+        return redirect()->route('dashboard')->with('message', 'advertisement deleted successfully');
     }
 }

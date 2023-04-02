@@ -24,6 +24,14 @@
   <link rel="stylesheet" href="{{asset('admin-dash-res/css/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('favicon.ico')}}" />
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'); */
+    @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+  </style>
 </head>
 
 <body>
