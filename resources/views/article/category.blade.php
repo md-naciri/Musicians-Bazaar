@@ -11,14 +11,14 @@
                 </div>
                 <div class="card-body vertical-menu" style="background-color: #f3f3f3">
                     @foreach ($articleSubcats as $articleSubcat)
-                        <a href="{{url()->current()}}/{{($articleSubcat->subcategory->slug)??''}}">
-                            {{$articleSubcat->subcategory->name ?? ''}}
-                        </a>
+                    <a href="{{url()->current()}}/{{($articleSubcat->subcategory->slug)??''}}">
+                        {{$articleSubcat->subcategory->name ?? ''}}
+                    </a>
                     @endforeach
                 </div>
             </div>
             <br>
-            <form action="{{url()->current()}}" method="get">
+            {{-- <form action="{{url()->current()}}" method="get">
                 <div class="card">
                     <div class="card-body" style="background-color: #f3f3f3">
                         <div class="mb-3">
@@ -34,7 +34,29 @@
                         </div>
                     </div>
                 </div>
+            </form> --}}
+
+            <form action="{{url()->current()}}" method="get">
+                <div class="card">
+                    <div class="card-body" style="background-color: #f3f3f3">
+                        <div class="mb-3">
+                            <label for="priceSlider" class="form-label">Price Range</label>
+                            <div id="priceSlider"></div>
+                            <input type="hidden" class="form-control" id="minPrice" name="minPrice"
+                                value="{{ request('minPrice') ?? '' }}">
+                            <input type="hidden" class="form-control" id="maxPrice" name="maxPrice"
+                                value="{{ request('maxPrice') ?? '' }}">
+                            <div id="priceRange"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-style2">Filter</button>
+                        </div>
+                    </div>
+                </div>
             </form>
+
+
         </div>
         <div class="col-md-9">
             <div class="row">
@@ -70,5 +92,6 @@
         </div> --}}
     </div>
 </div>
+
 
 @endsection

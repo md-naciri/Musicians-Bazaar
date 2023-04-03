@@ -41,6 +41,13 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
+
+    {{-- slider component --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
 </head>
 
 <body class="@yield('body-class')">
@@ -213,9 +220,43 @@
             @yield('content')
         </main>
 
-        
+
 
     </div>
+
+    <script>
+        $(function() {
+            // Check if minPrice and maxPrice query params are set, otherwise set default values
+            var urlParams = new URLSearchParams(window.location.search);
+            var minPriceParam = urlParams.get("minPrice");
+            var maxPriceParam = urlParams.get("maxPrice");
+            var minPrice = (minPriceParam !== null) ? parseInt(minPriceParam) : 0;
+            var maxPrice = (maxPriceParam !== null) ? parseInt(maxPriceParam) : 200000;
+            var step = 10;
+            $("#priceSlider").slider({
+                range: true,
+                min: 0,
+                max: 200000,
+                step: step,
+                values: [minPrice, maxPrice],
+                slide: function(event, ui) {
+                    $("#minPrice").val(ui.values[0]);
+                    $("#maxPrice").val(ui.values[1]);
+                    var minVal = $("#priceSlider").slider("values", 0);
+                    var maxVal = $("#priceSlider").slider("values", 1);
+                    $("#priceRange").html("MAD " + minVal + " - MAD " + maxVal);
+                }
+            });
+            var minVal = $("#priceSlider").slider("values", 0);
+            var maxVal = $("#priceSlider").slider("values", 1);
+            $("#priceRange").html("MAD " + minVal + " - MAD " + maxVal);
+        });
+    </script>
+
+
+
+
+
 </body>
 
 </html>
