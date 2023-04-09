@@ -162,7 +162,7 @@
                     <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl max-height-xl max-height-lg max-height-md max-height-sm" />
-                    <div class="card-footer text-center" style="background-color: #354c5c">
+                    <div class="card-footer text-center text-truncate" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top" style="background-color: #354c5c">
                         {{$item->title}}
                     </div>
                 </a>

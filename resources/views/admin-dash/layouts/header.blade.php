@@ -24,6 +24,19 @@
   <link rel="stylesheet" href="{{asset('admin-dash-res/css/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('favicon.ico')}}" />
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- DataTables JavaScript -->
+  {{-- <script type="text/javascript" src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> --}}
+  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+
+
+
+
+
   <style>
     /* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'); */
     @import url('https://fonts.googleapis.com/css?family=Nunito');
@@ -60,7 +73,7 @@
     </div> --}}
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="navbar-brand-wrapper d-flex justify-content-center" >
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
           {{-- <a class="navbar-brand brand-logo" href="index.html"><img
               src="{{asset('admin-dash-res/images/logo.svg')}}" alt="logo" /></a> --}}
@@ -75,7 +88,7 @@
           </button>
         </div>
       </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" >
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         {{-- <ul class="navbar-nav mr-lg-4 w-100">
           <li class="nav-item nav-search d-none d-lg-block w-100">
             <div class="input-group">

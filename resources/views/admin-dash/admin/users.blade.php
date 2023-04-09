@@ -10,7 +10,7 @@
                 <div class="card-header">All Users</div>
 
                 <div class="card-body">
-                    <table class="table table-striped">
+                    {{-- <table class="table table-striped">
                         <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -37,7 +37,40 @@
                             </tr>
                         @endforeach
                         </tbody>
+                    </table> --}}
+                    
+                    <table id="users-table" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
                     </table>
+                    
+                    <script>
+                        $(function() {
+                            $('#users-table').dataTable({
+                                processing: true,
+                                serverSide: true,
+                                ajax: '{{ route("admin.users.data") }}',
+                                columns: [
+                                    {data: 'id', name: 'id'},
+                                    {data: 'name', name: 'name'},
+                                    {data: 'email', name: 'email'},
+                                    {data: 'created_at', name: 'created_at'},
+                                    {data: 'actions', name: 'actions', orderable: false, searchable: false},
+                                ],
+                                lengthMenu: [5, 25, 50, 100] // set the number of rows per page
+                            });
+                        });
+                    </script>
+                    
                 </div>
             </div>
         </div>

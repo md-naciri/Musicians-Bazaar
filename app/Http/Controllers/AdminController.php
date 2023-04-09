@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Instrument;
 use App\Models\User;
+use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\HtmlString;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,6 +16,26 @@ class AdminController extends Controller
     {
         $users = User::all();
         return view('admin-dash.admin.users', compact('users'));
+    }
+
+
+    public function getUsers()
+    {
+        // $users = User::all();
+        // return DataTables::of($users)->make(true);
+        $users = User::query();
+        return DataTables::of($users)
+            ->editColumn('created_at', function($user) {
+                return $user->created_at->format('Y-m-d H:i:s');
+            })
+            ->addColumn('actions', function ($user) {
+                return new HtmlString('<form action="' . URL::route('admin.user.destroy', $user->id) . '" method="post">' .
+                    csrf_field() .
+                    method_field('DELETE') .
+                    '<button type="submit" class="btn btn-danger btn-sm">Delete</button>' .
+                    '</form>');
+            })
+            ->make(true);
     }
 
 

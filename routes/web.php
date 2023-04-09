@@ -49,6 +49,7 @@ Route::delete('/myads/delete/{id}', [InstrumentController::class, 'destroy'])->m
 Route::delete('admin/ads/{id}', [AdminController::class, 'destroy'])->middleware('auth')->name('admin.ad.destroy');
 Route::get('admin/users', [AdminController::class, 'showUsers'])->middleware('auth')->name('users.index');
 Route::delete('admin/users/{id}', [AdminController::class, 'deleteUser'])->name('admin.user.destroy');
+Route::get('admin/users/data', [AdminController::class, 'getUsers'])->name('admin.users.data');
 
 
 
