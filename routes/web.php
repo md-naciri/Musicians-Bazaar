@@ -61,8 +61,10 @@ Route::delete('/profile', [UserProfileController::class, 'deleteUser'])->middlew
 Route::get('/article/{catSlag}', [FilterController::class, 'articleByCat'])->name('cat');
 Route::get('/article/{catSlag}/{subcatSlug}', [FilterController::class, 'articleBySubcat'])->name('subcat');
 Route::get('/articl/{id}/{slug}', [InstrumentController::class, 'articleDisplay'])->name('article.display');
-
 Route::get('search', [SearchController::class, 'searchArticle']);
+Route::get('/articles/latest', [FilterController::class, 'latestArticles'])->name('article.latest');
+
+
 
 Route::get('/about', function () {
     return view('about');

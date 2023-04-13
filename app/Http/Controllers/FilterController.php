@@ -71,4 +71,24 @@ class FilterController extends Controller
 
         return view('article.subcategory', ['articles' => $articles, 'articleSubcats' => $articleSubcat]);
     }
+
+        public function latestArticles(Request $request)
+    {
+        $articlePrice = Instrument
+            ::when($request->minPrice, function ($query, $minPrice) {
+                return $query->whereRaw("CAST(price AS float) >= ?", [(float)$minPrice]);
+            })
+            ->when($request->maxPrice, function ($query, $maxPrice) {
+                return $query->whereRaw("CAST(price AS float) <= ?", [(float)$maxPrice]);
+            })
+            ->orderByDesc('id')->paginate(10);
+
+        $articles = Instrument::orderByDesc('id')->paginate(10);
+
+        $articles = $request->minPrice || $request->maxPrice ? $articlePrice : $articles;
+
+        return view('article.latest', ['articles' => $articles]);
+    }
+
+
 }

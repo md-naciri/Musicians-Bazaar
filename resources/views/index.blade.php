@@ -11,7 +11,7 @@
                 <p class="text-dark fs-5">The hub of all things musical, where buying and selling instruments is a
                     symphony of simplicity.</p>
                 {{-- <p class="text-dark">Open Your online store and get rich by selling dildo </p> --}}
-                <a href="#section-3" class="btn w-50 btn-style2 mt-3 shadow rounded-3">Latest listings</a>
+                <a href="#section-7" class="btn w-50 btn-style2 mt-3 shadow rounded-3">Latest listings</a>
             </div>
             <div class="col-md-6 d-md-block d-none text-end">
                 <img src="{{asset('img/static/sec1pic2.png')}}" alt="" class="img-fluid my-3">
@@ -72,6 +72,31 @@
             </form>
             {{--
         </div> --}}
+    </div>
+</div>
+
+
+<div id="section-7" class="section-4 container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <p class="fs-5" style="color: #354c5c">The latest listings</p>
+        <a href="{{route('article.latest')}}" class="fs-5" style="color: #8b3f1e">View all</a>
+    </div>
+
+    <div class="row">
+        @foreach ($fromAllArticles as $item)
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card bg-image hover-zoom ripple shadow-1-strong rounded img-style1">
+                <a href="{{route('article.display',[$item->id, $item->slug])}}">
+                    <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
+                    <img src="/img/inst_ads/{{$item->image1}}"
+                        class="w-100 max-height-xxl max-height-xl max-height-lg max-height-md max-height-sm" />
+                    <div class="card-footer text-center text-truncate" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top" style="background-color: #354c5c">
+                        {{$item->title}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        @endforeach
     </div>
 </div>
 

@@ -10,6 +10,9 @@ class Navigation extends Controller
 {
     public function navigation(){
         //I userd laravel local scope
+
+        $fromAllArticles = Instrument::orderByDesc('id')->take(4)->get();
+
         $category1 = Category::CategoryName('Strings and Orchestral Instruments');
         $articles1Slide1 = Instrument::Articles1Slide1($category1->id, 3);
         $articles1Slide2 = Instrument::Articles1Slide2($category1->id, $articles1Slide1);
@@ -22,6 +25,7 @@ class Navigation extends Controller
         $articles3Slide1 = Instrument::Articles1Slide1($category3->id, 3);
 
         return view('index',[
+            'fromAllArticles'=>$fromAllArticles,
             'articles1Slide1'=>$articles1Slide1,
             'articles1Slide2'=>$articles1Slide2, 
             'category1'=>$category1,

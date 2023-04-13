@@ -211,7 +211,7 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 }
 
-#section-3:before {
+#section-7:before {
     content: "";
     display: block;
     height: 80px;
