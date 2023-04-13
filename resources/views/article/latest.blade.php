@@ -5,19 +5,6 @@
 <div class="container main-class py-5">
     <div class="row">
         <div class="col-md-3 mb-4">
-            {{-- <div class="card">
-                <div class="card-header text-white text-center" style="background-color: #354c5c">
-                    {{$articleSubcats->first()->category->name}}
-                </div>
-                <div class="card-body vertical-menu" style="background-color: #f3f3f3">
-                    @foreach ($articleSubcats as $articleSubcat)
-                    <a href="{{url()->current()}}/{{($articleSubcat->subcategory->slug)??''}}">
-                        {{$articleSubcat->subcategory->name}}
-                    </a>
-                    @endforeach
-                </div>
-            </div>
-            <br> --}}
             <form action="{{url()->current()}}" method="get">
                 <div class="card">
                     <div class="card-body" style="background-color: #f3f3f3">
