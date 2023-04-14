@@ -19,6 +19,7 @@
                         <th scope="col">Edit</th>
                         <th scope="col">View</th>
                         <th scope="col">Delete</th>
+                        <th scope="col">Promote</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,16 +67,14 @@
                         </td>
                         <td>{{$inst->title}}</td>
                         <td>MAD {{$inst->price}}</td>
-                        <td><a href="{{route('ad.edit', $inst->id)}}"><button class="btn btn-style3"
-                                    >Edit</button></a>
-                        </td>
+                        <td><a href="{{route('ad.edit', $inst->id)}}"><button class="btn btn-style3">Edit</button></a></td>
                         <td>
                             <a href="{{route('article.display',[$inst->id, $inst->slug])}}">
                                 <button class="btn btn-style4">View</button>
                             </a>
                         </td>
-                        <td><button class="btn btn-style5"
-                                data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$inst->id}}">Delete</button>
+                        <td><button class="btn btn-style5" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop{{$inst->id}}">Delete</button>
                             <!-- Delete Modal -->
                             <div class="modal fade" id="staticBackdrop{{$inst->id}}" data-bs-backdrop="static"
                                 data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
@@ -102,6 +101,7 @@
                                 </div>
                             </div>
                         </td>
+                        <td><a href="{{route('stripe', $inst->id)}}"><button class="btn btn-dark">Promote</button></a></td>
                     </tr>
                     @endforeach
                 </tbody>

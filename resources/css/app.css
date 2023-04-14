@@ -89,6 +89,15 @@ a {
     left: 16px;
 }
 
+.top-right {
+    background-color: #ddd5 !important;
+    backdrop-filter: blur(17px) !important;
+    border: 1px solid #eee9;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
 .img-style1 a {
     color: #F3EFEF;
 }

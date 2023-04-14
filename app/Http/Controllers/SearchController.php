@@ -17,10 +17,10 @@ class SearchController extends Controller
                 ->when($request->maxPrice, function($query, $maxPrice){
                     return $query->whereRaw("CAST(price AS float) <= ?", [(float)$maxPrice]);
                 })
-                ->latest()->paginate(10);
+                ->orderByRaw('article_status')->latest()->paginate(10);
             }
             else{
-                $searchArticle = Instrument::where('title','LIKE','%'.$request->search.'%')->latest()->paginate(10);
+                $searchArticle = Instrument::where('title','LIKE','%'.$request->search.'%')->orderByRaw('article_status')->latest()->paginate(10);
             }
             return view('article.search',['searchArticle'=>$searchArticle]);
         }

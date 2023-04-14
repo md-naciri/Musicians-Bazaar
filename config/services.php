@@ -37,4 +37,9 @@ return [
         'redirect' => 'http://localhost:8000/auth/facebook/back',
     ],
 
+    'stripe' => [
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+    ],
+
 ];

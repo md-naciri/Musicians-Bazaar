@@ -10,6 +10,7 @@ use App\Http\Controllers\InstrumentController;
 use App\Http\Controllers\Navigation;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\StripeController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserProfileController;
 
@@ -74,3 +75,7 @@ Route::get('/auth/facebook', [SocialiteController::class, 'facebookRedirect'])->
 Route::get('/auth/facebook/back', [SocialiteController::class, 'facebookBack'])->name('facebook.back');
 
 Route::post('/contact', [ContactController::class, 'contactUs'])->name('contact.us');
+
+//stripe
+Route::get('/stripe/{id}', [StripeController::class, 'stripe'])->name('stripe');
+Route::post('/stripe', [StripeController::class, 'stripePost'])->name('stripe.post');

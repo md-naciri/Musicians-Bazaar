@@ -63,6 +63,9 @@
                 style="background-color: #f3f3f3">
                 <div class="row">
                     <div class="col-md-3" style="padding-right: 0;">
+                        @if ($article->article_status === 0)
+                        <span style="color: #ffffff" class="badge rounded-1 top-right">Promoted</span>
+                        @endif
                         <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$article->price}}</span>
                         <img src="/img/inst_ads/{{$article->image1}}"
                             class="w-100 max-height-xxl max-height-xl max-height-lg max-height-md max-height-sm" />
@@ -75,7 +78,8 @@
                             </div>
                         </a>
                         <p class="text-start m-2">
-                            <b>Instrument: </b>{{ $article->subcategory->name }} - <b>Price: </b>{{ $article->price }} DH
+                            <b>Instrument: </b>{{ $article->subcategory->name }} - <b>Price: </b>{{ $article->price }}
+                            DH
                             <br>
                             <b>Description: </b>
                             @if(strlen($article->text) > 120)
