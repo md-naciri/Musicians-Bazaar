@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Instrument;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 // use Stripe;
 use Stripe\Stripe;
@@ -13,7 +14,7 @@ class StripeController extends Controller
     public function stripe($id)
     {
         $id = $id;
-        return view('stripe.stripe',['id'=>$id]);
+        return view('stripe.stripe', ['id' => $id]);
     }
 
     public function stripePost(Request $request)
@@ -21,15 +22,17 @@ class StripeController extends Controller
         $ad = Instrument::findOrFail($request->ad_id);
         Stripe::setApiKey(config('services.stripe.secret'));
         Charge::create([
-            'amount'=>100*5,
-            'currency'=>"usd",
-            'source'=>$request->stripeToken,
-            'description'=>'Promote Ad: ' . $ad->title,
+            'amount' => 100 * 5,
+            'currency' => "usd",
+            'source' => $request->stripeToken,
+            'description' => 'Promote Ad: ' . $ad->title,
         ]);
 
-        $ad->update(['article_status' => 0]);
+        $ad->update([
+            'article_status' => 0,
+            'promo_time' => Carbon::now()->addDays(5) // Set promo_time column to current time plus 5 days
+        ]);
 
-        return back()->with('message','Payment successfull!');
-
+        return back()->with('message', 'Payment successfull!');
     }
 }
