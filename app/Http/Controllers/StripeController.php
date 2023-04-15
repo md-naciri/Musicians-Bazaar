@@ -13,8 +13,17 @@ class StripeController extends Controller
 {
     public function stripe($id)
     {
-        $id = $id;
-        return view('stripe.stripe', ['id' => $id]);
+        $instrument = Instrument::where('user_id', '=', auth()->user()->id)
+            ->where('id', $id)
+            ->first();
+
+        if ($instrument) {
+            return view('stripe.stripe', ['id' => $id]);
+        } else {
+            return redirect()->route('getMyAds');
+        }
+
+        // return view('stripe.stripe', ['id' => $id]);
     }
 
     public function stripePost(Request $request)

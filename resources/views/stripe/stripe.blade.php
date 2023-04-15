@@ -8,7 +8,7 @@
         <div class="panel panel-default credit-card-box">
 
             <div class="panel-body card text-bg-light p-3">
-                <h1>Stripe Payment Gateway</h1>
+                <h1>Promote your ad</h1>
 
                 @include('admin-dash.include.message')
 
@@ -50,18 +50,15 @@
                                 type='text'>
                         </div>
                     </div>
-
-
-
-                    <div class="row mb-3">
+                    {{-- <div class="row mb-3">
                         <div class="col-xs-12">
                             <button class="btn btn-success btn-lg btn-block" type="submit">Price: ($5)
                             </button><br>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row mb-3">
                         <div class="col-xs-12">
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Pay</button>
+                            <button class="btn btn-style2 btn-lg btn-block" type="submit">Pay</button>
                         </div>
                     </div>
 

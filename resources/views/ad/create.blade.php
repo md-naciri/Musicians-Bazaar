@@ -55,10 +55,10 @@
                                 </div>
                             </div>
 
-                            <div class="mt-3">
+                            {{-- <div class="mt-3">
                                 <label for="title"><b>Upload a video</b></label>
                                 <input type="file" name="video" class="input-white form-control" value="{{old('video')}}">
-                            </div>
+                            </div> --}}
 
                             <label for="file" class="mt-3"><b>Select a category and subcategory</b></label>
                             {{-- <div class="row">
@@ -139,7 +139,7 @@
                             <select-location></select-location>
 
                             <div class=" mt-3">
-                                <label for="phone"><b>Contact phone</b></label>
+                                <label for="phone"><b>Phone number</b></label>
                                 <input type="tel" class="input-white form-control" name="phone" value="{{old('phone')}}">
                             </div>
                             <div class=" mt-3">
