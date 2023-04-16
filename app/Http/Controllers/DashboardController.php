@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Instrument;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -15,13 +16,22 @@ class DashboardController extends Controller
     public function index()
     {
         $articles = Instrument::latest()->paginate(10);
-        return view('admin-dash.admin.index',['articles'=>$articles]);
+        $ads = Instrument::count();
+        $adsPromoted = Instrument::where('article_status', 0)->count();
+        $users = User::count();
+
+        return view('admin-dash.admin.index', [
+            'articles' => $articles,
+            'ads' => $ads,
+            'adsPromoted' => $adsPromoted,
+            'users' => $users,
+        ]);
     }
 
     public function userArticles($id)
     {
         $myInstruments = Instrument::where('user_id', $id)->get();
-        return view('ad.index',['myInstruments'=>$myInstruments]);
+        return view('ad.index', ['myInstruments' => $myInstruments]);
     }
 
     /**

@@ -3,6 +3,43 @@
 <div class="main-panel">
   <div class="content-wrapper">
     @include('admin-dash.include.message')
+
+    <h4>Statistics</h4>
+    <div class="card mb-4">
+      <div class="card-body dashboard-tabs p-0">
+        <div class="tab-content py-0 px-0">
+          <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+            <div class="d-flex flex-wrap justify-content-xl-between">
+              <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                <div class="d-flex flex-column justify-content-around">
+                  <small class="mb-1 text-muted">Ads</small>
+                  <h5 class="mr-2 mb-0">{{$ads}}</h5>
+                </div>
+              </div>
+              <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                <div class="d-flex flex-column justify-content-around">
+                  <small class="mb-1 text-muted">Promoted Ads</small>
+                  <h5 class="mr-2 mb-0">{{$adsPromoted}}</h5>
+                </div>
+              </div>
+              <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                <div class="d-flex flex-column justify-content-around">
+                  <small class="mb-1 text-muted">Users</small>
+                  <h5 class="mr-2 mb-0">{{$users}}</h5>
+                </div>
+              </div>
+              {{-- <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                <div class="d-flex flex-column justify-content-around">
+                  <small class="mb-1 text-muted">Naciri Test</small>
+                  <h5 class="mr-2 mb-0">Naciri Test</h5>
+                </div>
+              </div> --}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h4>Manage articles</h4>
     <div class="row justify-content-center">
       <div class="col-lg-12 grid-margin stretch-card">
@@ -29,7 +66,8 @@
                     </td>
                     <td>{{$article->title}}</td>
                     <td>
-                      <a target="_blank" href="{{route('user.articles',$article->user_id)}}">{{$article->user->name}}</a>
+                      <a target="_blank"
+                        href="{{route('user.articles',$article->user_id)}}">{{$article->user->name}}</a>
                     </td>
                     <td>MAD {{$article->price}}</td>
                     <td>
@@ -45,7 +83,7 @@
                       <!-- Button trigger modal -->
                       <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                         data-bs-target="#exampleModal{{$article->id}}">
-                        <i class="mdi mdi-delete"></i>
+                        Delete
                       </button>
 
                       <!-- Modal -->

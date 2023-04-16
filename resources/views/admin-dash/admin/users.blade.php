@@ -3,11 +3,11 @@
 <div class="main-panel">
   <div class="content-wrapper">
     @include('admin-dash.include.message')
-    <h4>Delete a User</h4>
+    <h4></h4>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">All Users</div>
+                <div class="card-header">Manage Users</div>
 
                 <div class="card-body">
                     {{-- <table class="table table-striped">

@@ -50,9 +50,9 @@
                 <div class="form-group row mb-0">
                     <div class="col-md-9 offset-md-3">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" name="remember" id="remember" {{
+                            {{-- <input type="checkbox" class="form-check-input" name="remember" id="remember" {{
                                 old('remember') ? 'checked' : '' }}>
-                            <label class="form-check-label" for="label">Remember me</label>
+                            <label class="form-check-label" for="label">Remember me</label> --}}
                             <p><a style="color: #354c5c" href="{{route('password.request')}}">Forgot
                                     your
                                     password?</a></p>

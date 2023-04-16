@@ -187,7 +187,8 @@
                     <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$item->price}}</span>
                     <img src="/img/inst_ads/{{$item->image1}}"
                         class="w-100 max-height-xxl max-height-xl max-height-lg max-height-md max-height-sm" />
-                    <div class="card-footer text-center text-truncate" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top" style="background-color: #354c5c">
+                    <div class="card-footer text-center text-truncate" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="Tooltip on top" style="background-color: #354c5c">
                         {{$item->title}}
                     </div>
                 </a>
@@ -296,5 +297,49 @@
         </button>
     </div>
 </div> --}}
+
+<footer class="text-center text-white" style="background-color: #f1f1f1; border-top: solid #354c5c6e 1px;">
+    <!-- Grid container -->
+    <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            {{-- <a class="btn btn-link btn-floating btn-lg text-dark m-1" target="_blank" href="#!" role="button"
+                data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a> --}}
+
+            <!-- Twitter -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" target="_blank"
+                href="https://twitter.com/med_ar_naciri" role="button" data-mdb-ripple-color="dark"><i
+                    class="fab fa-twitter"></i></a>
+
+            <!-- Google -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="mailto:med.ar.naciri@gmail.com"
+                role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
+
+            <!-- Instagram -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" target="_blank"
+                href="https://www.instagram.com/md_naciri" role="button" data-mdb-ripple-color="dark"><i
+                    class="fab fa-instagram"></i></a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" target="_blank"
+                href="https://www.linkedin.com/in/mohammed-el-arabi-naciri" role="button"
+                data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+            <!-- Github -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" target="_blank"
+                href="https://github.com/md-naciri" role="button" data-mdb-ripple-color="dark"><i
+                    class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3" style="background-color: #E8E8E8; border-top: solid #354c5c6e 1px;">
+        © 2023 Copyright:
+        <a class="text-dark" href="#!">MBazaar.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
 
 @endsection

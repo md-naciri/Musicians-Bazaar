@@ -18,7 +18,7 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        $subcategories = Subcategory::orderBy('category_id')->get();
+        $subcategories = Subcategory::orderBy('category_id')->paginate(10);
         return view('admin-dash.category.subcategory.index',['subcategories'=>$subcategories]);
     }
 

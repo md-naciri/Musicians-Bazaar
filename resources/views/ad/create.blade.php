@@ -5,7 +5,7 @@
 
     {{-- <div class="container my-app"> --}}
     <div class="container main-class py-5">
-        <h2> Hna chi title </h2>
+        <h2>  </h2>
         <div class="row ">
             <div class="col-md-3">
                 {{-- <div class="card ">
