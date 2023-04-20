@@ -7,6 +7,22 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p> -->
 
+## Execution
+
+- Clone the repository to your local machine using the command git clone https://github.com/your-username/musicians-bazaar.git.
+- Make sure you have Composer and Node.js installed on your machine.
+- In the root directory of the project, run composer install to install the PHP dependencies.
+- Copy the .env.example file to a new file called .env by running the command cp .env.example .env (on Unix-based systems) or copy .env.example .env (on Windows).
+- In the .env file, set the value of DB_DATABASE to the name of your MySQL database.
+- Create a new MySQL database with the same name as the DB_DATABASE value you set in the .env file.
+- Run php artisan key:generate to generate a new application key.
+- Run php artisan migrate to run the database migrations and create the necessary tables.
+- Run php artisan db:seed to seed the database with sample data.
+- Run npm install to install the JavaScript dependencies.
+- Run npm run dev to compile the JavaScript and CSS assets.
+- Run php artisan serve to start the development server.
+- Visit http://localhost:8000 in your web browser to view the website.
+
 ## <h1>Functional Requirements:</h1>
 
 The website will allow users to buy and sell musical instruments and accessories online. Sellers can create an account and post listings of their products, while buyers can browse the listings and contact sellers to purchase the products. The website should be user-friendly for both buyers and sellers, and should include search functionality to enable users to find specific products. The website will not be responsible for the quality of the products, delivery or payment.
