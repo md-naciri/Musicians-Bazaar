@@ -15,7 +15,7 @@
 - Copy the .env.example file to a new file called .env by running the command ```cp .env.example .env``` (on Unix-based systems) or ```copy .env.example .env``` (on Windows).
 - In the .env file, set the value of DB_DATABASE to the name of your MySQL database.
 - Create a new MySQL database with the same name as the DB_DATABASE value you set in the .env file.
-- Run ```bash php artisan key:generate``` to generate a new application key.
+- Run ```php artisan key:generate``` to generate a new application key.
 - Run ```php artisan migrate``` to run the database migrations and create the necessary tables.
 - Run ```php artisan db:seed``` to seed the database with sample data.
 - Run ```npm install``` to install the JavaScript dependencies.
