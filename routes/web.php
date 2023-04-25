@@ -37,20 +37,32 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/{id}/view', [DashboardController::class, 'userArticles'])->name('user.articles');
     Route::resource('/category', CategoryController::class);
     Route::resource('/subcategory', SubcategoryController::class);
+    Route::get('/users', [AdminController::class, 'showUsers'])->name('users.index');
+    Route::delete('/users/{id}', [AdminController::class, 'deleteUser'])->name('admin.user.destroy');
+    Route::get('/data', [AdminController::class, 'getUsers'])->name('admin.users.data');
+    Route::delete('/ads/{id}', [AdminController::class, 'destroy'])->name('admin.ad.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/myads/create', [InstrumentController::class, 'create'])->name('ad.create');
+    Route::post('/myads/store', [InstrumentController::class, 'store'])->name('ad.store');
+    Route::get('/myads', [InstrumentController::class, 'index'])->name('getMyAds');
+    Route::get('/myads/edit/{id}', [InstrumentController::class, 'edit'])->name('ad.edit');
+    Route::put('/myads/update/{id}', [InstrumentController::class, 'update'])->name('ad.update');
+    Route::delete('/myads/delete/{id}', [InstrumentController::class, 'destroy'])->name('ad.destroy');
+
+    //stripe
+    Route::get('/stripe/{id}', [StripeController::class, 'stripe'])->name('stripe');
+    Route::post('/stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
 });
 
 Route::get('/', [Navigation::class, 'navigation'])->name('home-page');
 
-Route::get('/myads/create', [InstrumentController::class, 'create'])->middleware('auth')->name('ad.create');
-Route::post('/myads/store', [InstrumentController::class, 'store'])->middleware('auth')->name('ad.store');
-Route::get('/myads', [InstrumentController::class, 'index'])->middleware('auth')->name('getMyAds');
-Route::get('/myads/edit/{id}', [InstrumentController::class, 'edit'])->middleware('auth')->name('ad.edit');
-Route::put('/myads/update/{id}', [InstrumentController::class, 'update'])->middleware('auth')->name('ad.update');
-Route::delete('/myads/delete/{id}', [InstrumentController::class, 'destroy'])->middleware('auth')->name('ad.destroy');
-Route::delete('admin/ads/{id}', [AdminController::class, 'destroy'])->middleware('auth')->name('admin.ad.destroy');
-Route::get('admin/users', [AdminController::class, 'showUsers'])->middleware('auth')->name('users.index');
-Route::delete('admin/users/{id}', [AdminController::class, 'deleteUser'])->name('admin.user.destroy');
-Route::get('admin/users/data', [AdminController::class, 'getUsers'])->name('admin.users.data');
+
+// Route::delete('admin/ads/{id}', [AdminController::class, 'destroy'])->middleware('auth')->name('admin.ad.destroy');
+// Route::get('admin/users', [AdminController::class, 'showUsers'])->middleware('auth')->name('users.index');
+// Route::delete('admin/users/{id}', [AdminController::class, 'deleteUser'])->name('admin.user.destroy');
+// Route::get('admin/users/data', [AdminController::class, 'getUsers'])->name('admin.users.data');
 
 
 
@@ -75,7 +87,3 @@ Route::get('/auth/facebook', [SocialiteController::class, 'facebookRedirect'])->
 Route::get('/auth/facebook/back', [SocialiteController::class, 'facebookBack'])->name('facebook.back');
 
 Route::post('/contact', [ContactController::class, 'contactUs'])->name('contact.us');
-
-//stripe
-Route::get('/stripe/{id}', [StripeController::class, 'stripe'])->name('stripe');
-Route::post('/stripe', [StripeController::class, 'stripePost'])->name('stripe.post');

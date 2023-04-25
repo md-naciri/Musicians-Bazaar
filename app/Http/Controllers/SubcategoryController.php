@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreSubcategoryRequest;
 use App\Http\Requests\UpdateSubcategoryRequest;
 use App\Models\Category;
+use App\Models\Instrument;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -94,6 +95,19 @@ class SubcategoryController extends Controller
     public function destroy($id)
     {
         Subcategory::destroy($id);
+        $instruments = Instrument::where('subcategory_id', $id)->get();
+        foreach ($instruments as $inst) {
+            if ($inst->image1) {
+                unlink(public_path('img/inst_ads/' . $inst->image1));
+            }
+            if ($inst->image2) {
+                unlink(public_path('img/inst_ads/' . $inst->image2));
+            }
+            if ($inst->image3) {
+                unlink(public_path('img/inst_ads/' . $inst->image3));
+            }
+        }
+        Instrument::where('subcategory_id', $id)->delete();
         return redirect()->route('subcategory.index')->with('message','Subcategory deleted successfully');
     }
 }

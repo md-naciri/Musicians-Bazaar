@@ -337,7 +337,7 @@
     <!-- Copyright -->
     <div class="text-center text-dark p-3" style="background-color: #E8E8E8; border-top: solid #354c5c6e 1px;">
         © 2023 Copyright:
-        <a class="text-dark" href="#!">MBazaar.com</a>
+        <a class="text-dark" href="http://localhost:8000">MBazaar.com</a>
     </div>
     <!-- Copyright -->
 </footer>

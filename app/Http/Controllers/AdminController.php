@@ -25,16 +25,42 @@ class AdminController extends Controller
         // return DataTables::of($users)->make(true);
         $users = User::query();
         return DataTables::of($users)
-            ->editColumn('created_at', function($user) {
+            ->editColumn('created_at', function ($user) {
                 return $user->created_at->format('Y-m-d H:i:s');
             })
+            // ->addColumn('actions', function ($user) {
+            //     return new HtmlString('<form action="' . URL::route('admin.user.destroy', $user->id) . '" method="post">' .
+            //         csrf_field() .
+            //         method_field('DELETE') .
+            //         '<button type="submit" class="btn btn-danger btn-sm">Delete</button>' .
+            //         '</form>');
+            // })
             ->addColumn('actions', function ($user) {
-                return new HtmlString('<form action="' . URL::route('admin.user.destroy', $user->id) . '" method="post">' .
+                return new HtmlString('<button data-bs-toggle="modal" data-bs-target="#deleteModal-' . $user->id . '" type="button" class="btn btn-danger btn-sm">Delete</button>
+                    <!-- Delete Confirmation Modal -->
+                    <div class="modal fade" id="deleteModal-' . $user->id . '" tabindex="-1" aria-labelledby="deleteModalLabel-' . $user->id . '" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel-' . $user->id . '">Delete confirmation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete this user account?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <form action="' . URL::route('admin.user.destroy', $user->id) . '" method="post">' .
                     csrf_field() .
                     method_field('DELETE') .
-                    '<button type="submit" class="btn btn-danger btn-sm">Delete</button>' .
-                    '</form>');
+                    '<button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>');
             })
+
             ->make(true);
     }
 

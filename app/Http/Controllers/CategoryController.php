@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategoryRequest;
 use App\Models\Category;
+use App\Models\Instrument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -112,6 +113,19 @@ class CategoryController extends Controller
         $category = Category::find($id);
         unlink(public_path('img/category/' . $category->image));
         Category::destroy($id);
+        $instruments = Instrument::where('category_id', $id)->get();
+        foreach ($instruments as $inst) {
+            if ($inst->image1) {
+                unlink(public_path('img/inst_ads/' . $inst->image1));
+            }
+            if ($inst->image2) {
+                unlink(public_path('img/inst_ads/' . $inst->image2));
+            }
+            if ($inst->image3) {
+                unlink(public_path('img/inst_ads/' . $inst->image3));
+            }
+        }
+        Instrument::where('category_id', $id)->delete();
         return redirect()->route('category.index')->with('message','Category deleted successfully');
     }
 }

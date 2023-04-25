@@ -67,7 +67,7 @@
                             <span style="color: #131b22" class="badge rounded-1 top-left">MAD {{$article->price}}</span>
                             <img src="/img/inst_ads/{{$article->image1}}"
                                 class="w-100 max-height-xxl max-height-xl max-height-lg max-height-md max-height-sm" />
-                            <div class="card-footer text-center" style="background-color: #354c5c">
+                            <div class="card-footer text-center text-truncate" style="background-color: #354c5c">
                                 {{$article->title}}
                             </div>
                         </a>

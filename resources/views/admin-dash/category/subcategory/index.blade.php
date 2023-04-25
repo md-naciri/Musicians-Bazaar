@@ -13,7 +13,7 @@
                                 <thead>
                                     <tr>
                                         <th>Subcategory name</th>
-                                        <th>Supercategory name</th>
+                                        <th>Category name</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>

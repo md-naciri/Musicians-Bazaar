@@ -11,6 +11,6 @@ You have received a new message from a user through your contact form. The detai
 
 {{ $content }}
 
-Thanks,<br>
-{{ config('app.name') }}
+Thanks!<br>
+{{-- {{ config('app.name') }} --}}
 @endcomponent

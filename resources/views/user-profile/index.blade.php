@@ -159,7 +159,8 @@
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn"
-                                                    style="background-color: var(--bs-danger-text); color:aliceblue;">Delete Account</button>
+                                                    style="background-color: var(--bs-danger-text); color:aliceblue;">Delete
+                                                    Account</button>
                                             </div>
                                         </div>
                                     </form>
