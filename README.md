@@ -57,7 +57,7 @@ The website will allow users to buy and sell musical instruments and accessories
 ## <h1>UML (Unified Modeling Language)</h1>
 - **[Class Diagram](https://lucid.app/lucidchart/6ef4d1cf-1fdf-4ed7-819a-cfc54d720348/edit?viewport_loc=-1038%2C-175%2C4231%2C2056%2C0_0&invitationId=inv_5b95bfa2-b4c3-4a02-95d5-6eb2b823d18d)**
 - **[Use Case Diagram](https://lucid.app/lucidchart/658e1ba4-7d1f-4800-857b-1bd621eccd9f/edit?viewport_loc=-938%2C-224%2C4834%2C2349%2C0_0&invitationId=inv_e5a7e573-e666-49d2-93f1-e78b1deded7e)**
-- **[Sequence Diagram](https://lucid.app/lucidchart/04df3e74-e1e5-4d38-9ef6-172be2eb37ce/edit?viewport_loc=-667%2C15%2C3416%2C1660%2C0_0&invitationId=inv_7de338b5-ca73-4588-8be0-e0f76307190c)**
+- **[Sequence Diagram](https://drive.google.com/file/d/1ZopqnWgd1p8douhbzMRuf7cekBGZ733K/view?usp=share_link)**
 
 ## <h1>Packages</h1>
 
